@@ -2,6 +2,7 @@ name: "statblog"
 title: "Statistical Data Science with R"
 description: |
   Statistical Data Science with R
+base_url: https://ctruciosm.github.io/statblog/
 output_dir: "docs"
 navbar:
   right:

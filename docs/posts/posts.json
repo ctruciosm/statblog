@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "path": "posts/2021-02-10-basics-of-linear-regression/",
+    "title": "Basics of Linear Regression",
+    "description": "Performing and interpreting Linear Regression Analysis using R.",
+    "author": [
+      {
+        "name": "Carlos Trucíos",
+        "url": "https://ctruciosm.github.io"
+      }
+    ],
+    "date": "2021-02-10",
+    "categories": [
+      "Linear Regression",
+      "R",
+      "OLS"
+    ],
+    "contents": "\nIntroduction\nLinear Regression Analysis is one of the most popular and useful statistical learning techniques and is helpful when we are interesting in explainig/predicting the variable \\(y\\) using a set of \\(k\\) explainable variables \\(x_1, \\ldots, x_k\\).\nBasically, we are saying that the \\(k\\) explainable variables can help us to understand the behaviour of \\(y\\) and, in a linear regression framework, the relation between \\(y\\) and the \\(x\\)’s is given by a linear funcion of the form,\n\\[y = \\underbrace{\\beta_0 + \\beta_1 x_1 + \\ldots + \\beta_k x_k}_{f(x_1, \\ldots, x_k)} + u\\] where \\(u\\) is an error term.\nOLS estimation\nIn practice we never know \\(\\beta = [\\beta_0, \\beta_1, \\ldots, \\beta_k]'\\) and we have to estimate them using data, for which purpose there are several methods, being OLS (Ordinary Least Squares) the most commonly used.\nThe OLS estimator is given by \\[\\hat{\\beta}_{OLS} = (X'X)^{-1}X'Y\\] with its respective covariance matrix (conditionally on \\(X\\)) given by \\[V(\\hat{\\beta}_{OLS}|X) = \\sigma^2(X'X)^{-1}\\] where \\(Y = [y_1, \\ldots, y_n]'\\) and \\(X = \\begin{bmatrix} 1 & x_{1,1} & \\cdots & x_{1,k} \\\\ \\vdots & \\vdots & \\cdots & \\vdots \\\\ 1 & x_{n,1} & \\cdots & x_{n,k} \\end{bmatrix}\\)\n\\(\\sigma^2\\) is never known, so we use \\(\\hat{\\sigma}^2 = \\dfrac{ \\sum_{i=1}^n \\hat{u}_i^2}{n-k-1}\\) instead, which is an unbiased estimator of \\(\\sigma^2\\) (\\(E(\\hat{\\sigma}^2) = \\sigma^2\\)).\nSo, in practice we always use \\(\\widehat{V}(\\hat{\\beta}_{OLS}|X) = \\hat{\\sigma}^2(X'X)^{-1}\\)\nThe Standard errors, usually reported by many econometrics/statistical softwares, are the square root of the diagonal elements of \\(\\widehat{V}(\\hat{\\beta}_{OLS}|X)\\)\nThe Gaus–Markov theorem states that, under some assumptions (known as Gauss-Markov hipotheses), \\(\\hat{\\beta}_{OLS}\\) is the Best Linear Unbiased Estimator (BLUE), i.e. for any other unbiased linear estimator \\(\\tilde{\\beta}\\), \\[V(\\tilde{\\beta}|X) \\geq V(\\hat{\\beta}_{OLS}|X).\\]\nFigure 1 displays an example of the regression line (\\(\\hat{y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 x\\)) obtained by OLS.\n\n\n\nFigure 1: OLS regression line example\n\n\n\nR implementation\nUsing linear regression in R is straightforward, to see how to implement a linear regression in R let’s use the hprice1 dataset from the wooldridge R package.\nTo perform the linear regression \\[price = \\beta_0 + \\beta_1 bdrms + \\beta_2 lotsize +  \\beta_3 sqrft + \\beta_4 colonial + u\\]\n\n\nlibrary(wooldridge)\nmodel = lm(price~bdrms+lotsize+sqrft+colonial, data = hprice1)\nmodel\n\n\n\nCall:\nlm(formula = price ~ bdrms + lotsize + sqrft + colonial, data = hprice1)\n\nCoefficients:\n(Intercept)        bdrms      lotsize        sqrft     colonial  \n -24.126528    11.004292     0.002076     0.124237    13.715542  \n\nA more complete output which includes the standard deviation of \\(\\hat{\\beta}\\), t test and p-values and be easy obtained by\n\n\nsummary(model)\n\n\n\nCall:\nlm(formula = price ~ bdrms + lotsize + sqrft + colonial, data = hprice1)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-122.268  -38.271   -6.545   28.210  218.040 \n\nCoefficients:\n              Estimate Std. Error t value Pr(>|t|)    \n(Intercept) -2.413e+01  2.960e+01  -0.815  0.41741    \nbdrms        1.100e+01  9.515e+00   1.156  0.25080    \nlotsize      2.076e-03  6.427e-04   3.230  0.00177 ** \nsqrft        1.242e-01  1.334e-02   9.314 1.53e-14 ***\ncolonial     1.372e+01  1.464e+01   0.937  0.35146    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 59.88 on 83 degrees of freedom\nMultiple R-squared:  0.6758,    Adjusted R-squared:  0.6602 \nF-statistic: 43.25 on 4 and 83 DF,  p-value: < 2.2e-16\n\nInterpretation\nffd\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": "posts/2021-02-10-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2021-02-10T22:07:25-03:00",
+    "input_file": {},
+    "preview_width": 1536,
+    "preview_height": 768
+  }
+]
