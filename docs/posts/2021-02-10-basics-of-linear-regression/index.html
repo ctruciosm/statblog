@@ -2195,15 +2195,15 @@ F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>There are several point to be addressed looking at the output of our regression model provided by the summary( ) function:</p>
 <ul>
 <li><span class="math inline">\(\approx 66\%\)</span> of price’s variability is explained by our model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
-<li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%</li>
-<li>The increase of one square feet in size lot, implies the increase (on average) of 2.076e-03 thousand USD in house prices</li>
-<li>The increase of one square feet in size house, implies the increase (on average) of 1.242e-01 thousand USD in house prices</li>
+<li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
+<li>The increase of one square feet in size lot, implies the increase (on average) of 2.076e-03 thousand USD in house prices (when other factors remain constant).</li>
+<li>The increase of one square feet in size house, implies the increase (on average) of 1.242e-01 thousand USD in house prices (when other factors remain constant).</li>
 </ul>
-<p>Finally, the summary( )’s output also provides useful information to test <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value 0, F-statistics = 43.25)</p>
+<p>Finally, the summary( )’s output also provides useful information to test <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
 <blockquote>
 <p>Of course, the inpretetation was made assuming that the <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">classical linear model hypothesis</a> were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified.</p>
 </blockquote>
-<h3 id="a-little-bit-more-about-interpretation">A little bit more about interpretation</h3>
+<h3 id="a-bit-more-about-interpretation">A bit more about interpretation</h3>
 <p>In Wooldridge’s book<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> we find an interesting discussion about model interpretation depending whether <span class="math inline">\(\log(\cdot)\)</span> transformation is used or not, which can be summarised as:</p>
 <table>
 <thead>
