@@ -6,7 +6,7 @@
       "description": "This is my personal blog. I hope this space could be helpful for my students and for any interested reader as well. The focus of this blog is to talk about statistical modelling, machine learning, data science, forecasting techniques and related topics. Enjoy!",
       "author": [],
       "contents": "\nAbout me\nHi, my name is Carlos, I am Assistant Professor (tenure track) of Quantitative Methods in the Faculty of Business Administration and Accounting (FACC) at the Federal University of Rio de Janeiro (UFRJ), Brazil.\nI hold a Ph.D in Statistics from the University of Campinas (Brazil) and my research interests are risk management, portfolio allocation, volatility forecasting, robust statistics, and statistical learning.\nPlease, feel free to contact me to talk about this blog, a collaborative research project or something related with statistics and quantitative methods.\nMore details about me: ctruciosm.github.io\n\n\n\n",
-      "last_modified": "2021-02-11T11:05:40-03:00"
+      "last_modified": "2021-02-14T11:32:20-03:00"
     },
     {
       "path": "index.html",
@@ -14,7 +14,7 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-02-11T11:05:42-03:00"
+      "last_modified": "2021-02-14T11:32:22-03:00"
     }
   ],
   "collections": ["posts/posts.json"]

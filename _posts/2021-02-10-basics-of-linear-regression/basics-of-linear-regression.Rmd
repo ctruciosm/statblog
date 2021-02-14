@@ -1,7 +1,7 @@
 ---
 title: "Basics of Linear Regression"
 description: |
-  Performing and interpreting Linear Regression Analysis using R.
+  A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.
 categories:
   - Linear Regression
   - R
@@ -9,7 +9,7 @@ categories:
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
-date: 02-10-2021
+date: 02-14-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -19,7 +19,7 @@ draft: false
 
 ### Introduction
 
-Linear Regression Analysis is one of the most popular and useful
+Linear Regression Analysis (LRA) is one of the most popular and useful
 statistical learning techniques and is helpful when we are interesting in explainig/predicting the variable $y$ using a set of $k$ explainable variables $x_1, \ldots, x_k$.
 
 Basically, we are saying that the $k$ explainable variables can help us to understand the behaviour of $y$ and, in a linear regression framework, the relation between $y$ and the $x$'s is given by a linear funcion of the form,
@@ -31,7 +31,7 @@ $$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, 
 
 ### OLS estimation
 
-In practice we never know $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ and we have to estimate them using data, for which purpose there are several methods, being [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) (Ordinary Least Squares) the most commonly used. 
+In practice we never know $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ and we have to estimate them using data, for which purpose there are several methods, being [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) (Ordinary Least Squares) the most commonly used^[The basic idea of OLS is to find the values $\hat{\beta}$'s that minimize the sum of squared errors.]. 
 
 The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y$$ with its respective covariance matrix (conditionally on $X$) given by $$V(\hat{\beta}_{OLS}|X) = \sigma^2(X'X)^{-1}$$ where $Y = [y_1, \ldots, y_n]'$ and $X = \begin{bmatrix} 
 1 & x_{1,1} & \cdots & x_{1,k} \\ 
@@ -39,12 +39,12 @@ The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y$$ with its re
 1 & x_{n,1} & \cdots & x_{n,k} \end{bmatrix}$
 
 - $\sigma^2$ is never known, so we use $\hat{\sigma}^2 = \dfrac{ \sum_{i=1}^n \hat{u}_i^2}{n-k-1}$ instead, which is an unbiased estimator of $\sigma^2$ ($E(\hat{\sigma}^2) = \sigma^2$).
-- So, in practice we always use $\widehat{V}(\hat{\beta}_{OLS}|X) = \hat{\sigma}^2(X'X)^{-1}$
+- So, in practice we always use $\widehat{V}(\hat{\beta}_{OLS}|X) = \hat{\sigma}^2(X'X)^{-1}$ instead of $V(\hat{\beta}_{OLS}|X)$.
 - The Standard errors, usually reported by many econometrics/statistical softwares, are the square root of the diagonal elements of $\widehat{V}(\hat{\beta}_{OLS}|X)$
 
 The [Gaus--Markov theorem](https://en.wikipedia.org/wiki/Gauss–Markov_theorem) states that, under some assumptions (known as Gauss-Markov hipotheses), $\hat{\beta}_{OLS}$ is the **Best Linear Unbiased Estimator** (BLUE), *i.e.* for any other unbiased linear estimator\footnote{A linear estimator is an estimator of the form $\tilde{\beta} = A'Y$ where the matrix A} $\tilde{\beta}$, $$V(\tilde{\beta}|X) \geq V(\hat{\beta}_{OLS}|X).$$
 
-Figure 1 displays an example of the regression line ($\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$) obtained by OLS.
+Figure 1 displays an example of the regression line $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$ obtained by OLS.
 
 ```{r  echo=FALSE, fig.height=4, fig.width=8, message=FALSE, warning=FALSE, fig.cap= "OLS regression line example"}
 library(ggplot2)
@@ -58,7 +58,7 @@ ggplot(data=cars) + geom_point(aes(x = speed, y = dist)) + geom_smooth(aes(x = s
 
 Using linear regression in R is straightforward, to see how to implement a linear regression in R let's use the *hprice1* dataset from the *wooldridge* R package.
 
-To perform the linear regression $$price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u$$
+To perform the linear regression $$price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u,$$ we use
 
 
 ```{r}
@@ -67,7 +67,10 @@ model = lm(price~bdrms+lotsize+sqrft+colonial, data = hprice1)
 model
 ```
 
-A more complete output which includes the standard deviation of $\hat{\beta}$, t test and p-values and be easy obtained by
+> The lm( ) function don't need to load any R package, but the *hprice1* dataset needs the wooldridge R package.
+
+
+A better output, which includes the standard deviation of $\hat{\beta}$, t-test, F-test, $R^2$ and p-values can be easily obtained by
 
 ```{r}
 summary(model)
@@ -75,17 +78,39 @@ summary(model)
 
 ### Interpretation
 
-ffd
+There are several point to be addressed looking at the output of our regression model provided by the summary( ) function:
+
+- $\approx 66\%$ of price's variability is explained by our model^[Usually, we prefer  $R^2_{Adjusted}$ rather than $R^2$].
+- Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\% 
+- The increase of one square feet in size lot, implies the increase (on average) of 2.076e-03 thousand USD in house prices
+- The increase of one square feet in size house, implies the increase (on average) of 1.242e-01 thousand USD in house prices
+
+
+Finally, the summary( )'s output also provides useful information to test $$H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0$$ versus $$H_1: H_0 \text{ is not true. }$$
+Using the F-test, we reject $H_0$ (p-value \approx 0, F-statistics = 43.25)
+
+
+> Of course, the inpretetation was made assuming that the [classical linear model hypothesis](https://economictheoryblog.com/2015/04/01/ols_assumptions/) were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified. 
 
 
 
+### A little bit more about interpretation
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+In Wooldridge's book^[Wooldridge, J. M. (2016). Introductory econometrics: A modern approach. Nelson Education.] we find an interesting discussion about model interpretation depending whether $\log(\cdot)$ transformation is used or not, which can be summarised as:
 
-Distill is a publication format for scientific and technical writing, native to the web.
+|  Dependent variable | Independent variable | Interpretation of $\beta$   |
+|:-------:|:--------:|:---------------------------:|
+|$y$  | $x$ | $\Delta y = \beta \Delta x$     |
+|$y$  | $\log(x)$ | $\Delta y = \big(\beta/100 \big) \% \Delta x$     |
+|$\log(y)$  | $x$ | $\% \Delta y = 100\beta \Delta x$     |
+|$\log(y)$  | $\log(x)$ | $\% \Delta y = \beta \% \Delta x$     |
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
+### Conclusions
+
+- LRA is a powerful and easy to implemente statistical learning technique which can provides interesting insights about our data.
+- R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.
+
 
 

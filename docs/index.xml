@@ -7,17 +7,17 @@
     <description>Statistical Data Science with R
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Basics of Linear Regression</title>
       <dc:creator>Carlos Trucíos</dc:creator>
       <link>https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression</link>
-      <description>Performing and interpreting Linear Regression Analysis using R.</description>
+      <description>A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.</description>
       <category>Linear Regression</category>
       <category>R</category>
       <category>OLS</category>
       <guid>https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression</guid>
-      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1536" height="768"/>
     </item>
   </channel>
