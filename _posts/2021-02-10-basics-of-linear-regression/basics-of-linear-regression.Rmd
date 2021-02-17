@@ -79,7 +79,29 @@ summary(model)
 
 ### Interpretation
 
-There are several point to be addressed looking at the output of our regression model provided by the summary( ) function:
+
+Before interpreting the results, it is very important to know our dataset and have totally understanding about the variables we are using. Thus, let's have a glimpse in our dataset
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+hprice1 %>% select(price, bdrms, lotsize, sqrft, colonial) %>% glimpse()
+```
+
+
+The description of the variables is given below: 
+
+
+| Variavel |      Description        |
+|:---------|:------------------|
+| price    | house price, $1000s |
+| bdrms    | number of bedrooms  |
+| lotsize  | size of lot in square feet|
+| sqrft    | size of house in square feet|
+| colonial | Dummy (=1 if home is colonial style) |
+
+
+
+There are several points to be addressed looking at the output of our regression model provided by the summary( ) function:
 
 - $\approx 66\%$ of price's variability is explained by our model^[Usually, we prefer  $R^2_{Adjusted}$ rather than $R^2$].
 - Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\%. 
@@ -112,7 +134,7 @@ In Wooldridge's book^[Wooldridge, J. M. (2016). Introductory econometrics: A mod
 - R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.
 
 
-### Appendix
+### Bonus
 
 
 #### Python implementation

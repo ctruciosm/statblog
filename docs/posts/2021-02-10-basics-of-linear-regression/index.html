@@ -2193,7 +2193,53 @@ Multiple R-squared:  0.6758,    Adjusted R-squared:  0.6602
 F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <h3 id="interpretation">Interpretation</h3>
-<p>There are several point to be addressed looking at the output of our regression model provided by the summary( ) function:</p>
+<p>Before interpreting the results, it is very important to know our dataset and have totally understanding about the variables we are using. Thus, let’s have a glimpse in our dataset</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='va'>hprice1</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>price</span>, <span class='va'>bdrms</span>, <span class='va'>lotsize</span>, <span class='va'>sqrft</span>, <span class='va'>colonial</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/glimpse.html'>glimpse</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Rows: 88
+Columns: 5
+$ price    &lt;dbl&gt; 300.000, 370.000, 191.000, 195.000, 373.000, 466.2…
+$ bdrms    &lt;int&gt; 4, 3, 3, 3, 4, 5, 3, 3, 3, 3, 4, 5, 3, 3, 3, 4, 4,…
+$ lotsize  &lt;dbl&gt; 6126, 9903, 5200, 4600, 6095, 8566, 9000, 6210, 60…
+$ sqrft    &lt;int&gt; 2438, 2076, 1374, 1448, 2514, 2754, 2067, 1731, 17…
+$ colonial &lt;int&gt; 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0,…</code></pre>
+</div>
+<p>The description of the variables is given below:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variavel</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">price</td>
+<td style="text-align: left;">house price, $1000s</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bdrms</td>
+<td style="text-align: left;">number of bedrooms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lotsize</td>
+<td style="text-align: left;">size of lot in square feet</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sqrft</td>
+<td style="text-align: left;">size of house in square feet</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">colonial</td>
+<td style="text-align: left;">Dummy (=1 if home is colonial style)</td>
+</tr>
+</tbody>
+</table>
+<p>There are several points to be addressed looking at the output of our regression model provided by the summary( ) function:</p>
 <ul>
 <li><span class="math inline">\(\approx 66\%\)</span> of price’s variability is explained by our model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
 <li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
@@ -2241,31 +2287,31 @@ F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>LRA is a powerful and easy to implemente statistical learning technique which can provides interesting insights about our data.</li>
 <li>R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.</li>
 </ul>
-<h3 id="appendix">Appendix</h3>
+<h3 id="bonus">Bonus</h3>
 <h4 id="python-implementation">Python implementation</h4>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> patsy <span class="im">import</span> dmatrices</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/ctruciosm/statblog/master/datasets/hprice1.csv&quot;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>hprice1 <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a>y, X <span class="op">=</span> dmatrices(<span class="st">&#39;price ~ bdrms + lotsize + sqrft + colonial&#39;</span>, </span>
-<span id="cb3-9"><a href="#cb3-9"></a>                  data <span class="op">=</span> hprice1, return_type <span class="op">=</span> <span class="st">&#39;dataframe&#39;</span>)</span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Describe model</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co"># Fit model</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>model_fit <span class="op">=</span> model.fit()</span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># Summarize model</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="bu">print</span>(model_fit.summary())</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">from</span> patsy <span class="im">import</span> dmatrices</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/ctruciosm/statblog/master/datasets/hprice1.csv&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>hprice1 <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>y, X <span class="op">=</span> dmatrices(<span class="st">&#39;price ~ bdrms + lotsize + sqrft + colonial&#39;</span>, </span>
+<span id="cb4-9"><a href="#cb4-9"></a>                  data <span class="op">=</span> hprice1, return_type <span class="op">=</span> <span class="st">&#39;dataframe&#39;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Describe model</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Fit model</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>model_fit <span class="op">=</span> model.fit()</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># Summarize model</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="bu">print</span>(model_fit.summary())</span></code></pre></div>
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                  price   R-squared:                       0.676
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     43.25
-Date:                Ter, 16 Fev 2021   Prob (F-statistic):           1.45e-19
-Time:                        22:22:32   Log-Likelihood:                -482.41
+Date:                Qua, 17 Fev 2021   Prob (F-statistic):           1.45e-19
+Time:                        08:15:50   Log-Likelihood:                -482.41
 No. Observations:                  88   AIC:                             974.8
 Df Residuals:                      83   BIC:                             987.2
 Df Model:                           4                                         
@@ -2290,7 +2336,7 @@ Notes:
 [2] The condition number is large, 6.43e+04. This might indicate that there are
 strong multicollinearity or other numerical problems.</code></pre>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
