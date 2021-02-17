@@ -88,30 +88,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Basics of Linear Regression</title>
   
-  <meta property="description" itemprop="description" content="A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it."/>
+  <meta property="description" itemprop="description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-02-14"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-02-14"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-02-16"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-02-16"/>
   <meta name="article:author" content="Carlos Trucíos"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Basics of Linear Regression"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it."/>
+  <meta property="og:description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
   <meta property="og:locale" content="en_US"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Basics of Linear Regression"/>
-  <meta property="twitter:description" content="A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it."/>
+  <meta property="twitter:description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Basics of Linear Regression"]},{"type":"character","attributes":{},"value":["A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.\n"]},{"type":"character","attributes":{},"value":["Linear Regression","R","OLS"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]}]}]},{"type":"character","attributes":{},"value":["02-14-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Basics of Linear Regression"]},{"type":"character","attributes":{},"value":["A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.\n"]},{"type":"character","attributes":{},"value":["Linear Regression","R","Python","OLS"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]}]}]},{"type":"character","attributes":{},"value":["02-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1454,7 +1454,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Basics of Linear Regression","description":"A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-14T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
+{"title":"Basics of Linear Regression","description":"A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-16T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1469,16 +1469,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="dt-tags">
 <div class="dt=tag">Linear Regression</div>
 <div class="dt=tag">R</div>
+<div class="dt=tag">Python</div>
 <div class="dt=tag">OLS</div>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.</p></p>
+<p><p>A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.</p></p>
 </div>
 
 <div class="d-byline">
   Carlos Trucíos <a href="https://ctruciosm.github.io" class="uri">https://ctruciosm.github.io</a> 
   
-<br/>02-14-2021
+<br/>02-16-2021
 </div>
 
 <div class="d-article">
@@ -1558,14 +1559,13 @@ F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ul>
 <li><span class="math inline">\(\approx 66\%\)</span> of price’s variability is explained by our model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
 <li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
-<li>The increase of one square feet in size lot, implies the increase (on average) of 2.076e-03 thousand USD in house prices (when other factors remain constant).</li>
-<li>The increase of one square feet in size house, implies the increase (on average) of 1.242e-01 thousand USD in house prices (when other factors remain constant).</li>
+<li>The increase of one square feet in size lot, implies the increase (on average) of 0.002076 (<span class="math inline">\(\approx\)</span> 0.0021) thousand USD in house prices (when other factors remain constant).</li>
+<li>The increase of one square feet in size house, implies the increase (on average) of 0.1242 thousand USD in house prices (when other factors remain constant).</li>
 </ul>
 <p>Finally, the summary( )’s output also provides useful information to test <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
 <blockquote>
 <p>Of course, the inpretetation was made assuming that the <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">classical linear model hypothesis</a> were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified.</p>
 </blockquote>
-<h3 id="a-bit-more-about-interpretation">A bit more about interpretation</h3>
 <p>In Wooldridge’s book<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> we find an interesting discussion about model interpretation depending whether <span class="math inline">\(\log(\cdot)\)</span> transformation is used or not, which can be summarised as:</p>
 <table>
 <thead>
@@ -1603,7 +1603,56 @@ F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>LRA is a powerful and easy to implemente statistical learning technique which can provides interesting insights about our data.</li>
 <li>R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="appendix">Appendix</h3>
+<h4 id="python-implementation">Python implementation</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> patsy <span class="im">import</span> dmatrices</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/ctruciosm/statblog/master/datasets/hprice1.csv&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>hprice1 <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a>y, X <span class="op">=</span> dmatrices(<span class="st">&#39;price ~ bdrms + lotsize + sqrft + colonial&#39;</span>, </span>
+<span id="cb3-9"><a href="#cb3-9"></a>                  data <span class="op">=</span> hprice1, return_type <span class="op">=</span> <span class="st">&#39;dataframe&#39;</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Describe model</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co"># Fit model</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>model_fit <span class="op">=</span> model.fit()</span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># Summarize model</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="bu">print</span>(model_fit.summary())</span></code></pre></div>
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  price   R-squared:                       0.676
+Model:                            OLS   Adj. R-squared:                  0.660
+Method:                 Least Squares   F-statistic:                     43.25
+Date:                Ter, 16 Fev 2021   Prob (F-statistic):           1.45e-19
+Time:                        22:22:32   Log-Likelihood:                -482.41
+No. Observations:                  88   AIC:                             974.8
+Df Residuals:                      83   BIC:                             987.2
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept    -24.1265     29.603     -0.815      0.417     -83.007      34.754
+bdrms         11.0043      9.515      1.156      0.251      -7.921      29.930
+lotsize        0.0021      0.001      3.230      0.002       0.001       0.003
+sqrft          0.1242      0.013      9.314      0.000       0.098       0.151
+colonial      13.7155     14.637      0.937      0.351     -15.397      42.828
+==============================================================================
+Omnibus:                       24.904   Durbin-Watson:                   2.117
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               45.677
+Skew:                           1.091   Prob(JB):                     1.21e-10
+Kurtosis:                       5.774   Cond. No.                     6.43e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 6.43e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.</code></pre>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>

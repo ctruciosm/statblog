@@ -1,15 +1,16 @@
 ---
 title: "Basics of Linear Regression"
 description: |
-  A quick introductory tutorial about Linear Regression Analysis and how to use R to perform it.
+  A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.
 categories:
   - Linear Regression
   - R
+  - Python
   - OLS
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
-date: 02-14-2021
+date: 02-16-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -82,8 +83,8 @@ There are several point to be addressed looking at the output of our regression 
 
 - $\approx 66\%$ of price's variability is explained by our model^[Usually, we prefer  $R^2_{Adjusted}$ rather than $R^2$].
 - Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\%. 
-- The increase of one square feet in size lot, implies the increase (on average) of 2.076e-03 thousand USD in house prices (when other factors remain constant).
-- The increase of one square feet in size house, implies the increase (on average) of 1.242e-01 thousand USD in house prices (when other factors remain constant).
+- The increase of one square feet in size lot, implies the increase (on average) of 0.002076 ($\approx$ 0.0021) thousand USD in house prices (when other factors remain constant).
+- The increase of one square feet in size house, implies the increase (on average) of 0.1242 thousand USD in house prices (when other factors remain constant).
 
 
 Finally, the summary( )'s output also provides useful information to test $$H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0$$ versus $$H_1: H_0 \text{ is not true. }$$
@@ -93,8 +94,6 @@ Using the F-test, we reject $H_0$ (p-value $\approx$ 0, F-statistics = 43.25)
 > Of course, the inpretetation was made assuming that the [classical linear model hypothesis](https://economictheoryblog.com/2015/04/01/ols_assumptions/) were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified. 
 
 
-
-### A bit more about interpretation
 
 In Wooldridge's book^[Wooldridge, J. M. (2016). Introductory econometrics: A modern approach. Nelson Education.] we find an interesting discussion about model interpretation depending whether $\log(\cdot)$ transformation is used or not, which can be summarised as:
 
@@ -111,6 +110,30 @@ In Wooldridge's book^[Wooldridge, J. M. (2016). Introductory econometrics: A mod
 
 - LRA is a powerful and easy to implemente statistical learning technique which can provides interesting insights about our data.
 - R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.
+
+
+### Appendix
+
+
+#### Python implementation
+
+```{python}
+import statsmodels.api as sm
+import pandas as pd
+from patsy import dmatrices
+
+url = "https://raw.githubusercontent.com/ctruciosm/statblog/master/datasets/hprice1.csv"
+hprice1 = pd.read_csv(url)
+
+y, X = dmatrices('price ~ bdrms + lotsize + sqrft + colonial', 
+                  data = hprice1, return_type = 'dataframe')
+# Describe model
+model = sm.OLS(y, X)
+# Fit model
+model_fit = model.fit()
+# Summarize model
+print(model_fit.summary())
+```
 
 
 
