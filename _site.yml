@@ -1,8 +1,8 @@
 name: "statblog"
-title: "Data Science with Science"
+title: "Statistical Data Science"
 subtitle: "Understanding the science behind Data Science"
 description: |
-  Data Science with Science: 
+  Statistical Data Science: 
   Understanding the science behind Data Science 
 base_url: https://ctruciosm.github.io/statblog/
 output_dir: "docs"
@@ -20,5 +20,5 @@ collections:
     categories: TRUE
     categories_metadata: TRUE
     authors_metadata: TRUE
-    disqus: data-science-with-science
+    disqus: statistical-data-science
     share: [facebook, twitter, linkedin]
