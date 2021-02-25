@@ -10,7 +10,7 @@ categories:
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
-date: 02-16-2021
+date: 02-25-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -43,7 +43,7 @@ The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y$$ with its re
 - So, in practice we always use $\widehat{V}(\hat{\beta}_{OLS}|X) = \hat{\sigma}^2(X'X)^{-1}$ instead of $V(\hat{\beta}_{OLS}|X)$.
 - The Standard errors, usually reported by many econometrics/statistical softwares, are the square root of the diagonal elements of $\widehat{V}(\hat{\beta}_{OLS}|X)$
 
-The [Gaus--Markov theorem](https://en.wikipedia.org/wiki/Gauss–Markov_theorem) states that, under some assumptions (known as Gauss-Markov hipotheses), $\hat{\beta}_{OLS}$ is the **Best Linear Unbiased Estimator** (BLUE), *i.e.* for any other unbiased linear estimator\footnote{A linear estimator is an estimator of the form $\tilde{\beta} = A'Y$ where the matrix A} $\tilde{\beta}$, $$V(\tilde{\beta}|X) \geq V(\hat{\beta}_{OLS}|X).$$
+The [Gaus--Markov theorem](https://en.wikipedia.org/wiki/Gauss–Markov_theorem) states that, under some assumptions (known as Gauss-Markov hipotheses), $\hat{\beta}_{OLS}$ is the **Best Linear Unbiased Estimator** (BLUE), *i.e.* for any other unbiased linear estimator^[A linear estimator is an estimator of the form $\tilde{\beta} = A'Y$ where the matrix $A$ is a $n \times k+1$ function of $X$] $\tilde{\beta}$, $$V(\tilde{\beta}|X) \geq V(\hat{\beta}_{OLS}|X).$$
 
 Figure 1 displays an example of the regression line $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$ obtained by OLS.
 
@@ -68,8 +68,10 @@ model = lm(price~bdrms+lotsize+sqrft+colonial, data = hprice1)
 model
 ```
 
-> The lm( ) function don't need to load any R package, but the *hprice1* dataset needs the wooldridge R package.
 
+<aside>
+The lm( ) function don't need to load any R package, but the *hprice1* dataset needs the wooldridge R package.
+</aside>
 
 A better output, which includes the standard deviation of $\hat{\beta}$, t-test, F-test, $R^2$ and p-values can be easily obtained by
 
@@ -88,6 +90,10 @@ hprice1 %>% select(price, bdrms, lotsize, sqrft, colonial) %>% glimpse()
 ```
 
 
+<aside>
+The package *dplyr* is for data manipulation. The function select( ) select a subset of variables in *hprice1* while the function glimpse( ) allow us to have a glimpse of the data.
+</aside>
+
 The description of the variables is given below: 
 
 
@@ -105,8 +111,8 @@ There are several points to be addressed looking at the output of our regression
 
 - $\approx 66\%$ of price's variability is explained by our model^[Usually, we prefer  $R^2_{Adjusted}$ rather than $R^2$].
 - Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\%. 
-- The increase of one square feet in size lot, implies the increase (on average) of 0.002076 ($\approx$ 0.0021) thousand USD in house prices (when other factors remain constant).
-- The increase of one square feet in size house, implies the increase (on average) of 0.1242 thousand USD in house prices (when other factors remain constant).
+- The increase of 481 square feet in size lot, implies the increase (on average) of a thousand^[$2.076e-03*481 = 0.998556 \approx 1$] USD in house prices (when other factors remain constant).
+- The increase of 8 square feet in size house, implies the increase (on average) of a thousand^[$0.1242*8 = 0.9936 \approx 1$] USD in house prices (when other factors remain constant).
 
 
 Finally, the summary( )'s output also provides useful information to test $$H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0$$ versus $$H_1: H_0 \text{ is not true. }$$

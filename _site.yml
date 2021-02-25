@@ -1,7 +1,9 @@
 name: "statblog"
-title: "Statistical Data Science with R"
+title: "Statistical Data Science"
+subtitle: "Understanding the science behind Data Science"
 description: |
-  Statistical Data Science with R
+  Statistical Data Science: 
+  Understanding the science behind Data Science 
 base_url: https://ctruciosm.github.io/statblog/
 output_dir: "docs"
 navbar:

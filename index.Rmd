@@ -1,7 +1,9 @@
 ---
-title: "Statistical Data Science with R"
+title: "Statistical Data Science"
+subtitle: |
+  | 'Understanding the science behind Data Science'
 description: |
-  Welcome to the website. I hope you enjoy it!
+  | 'Statistical Data Science: Understanding the science behind Data Science' 
 site: distill::distill_website
 listing: posts
 ---

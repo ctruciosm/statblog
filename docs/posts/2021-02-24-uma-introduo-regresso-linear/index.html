@@ -86,11 +86,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Statistical Data Science: Basics of Linear Regression</title>
+<title>Statistical Data Science: Intro à Regressão Linear</title>
 
-<meta property="description" itemprop="description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
+<meta property="description" itemprop="description" content="Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python)."/>
 
-<link rel="canonical" href="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"/>
+<link rel="canonical" href="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-02-25"/>
@@ -98,11 +98,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Carlos Trucíos"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Statistical Data Science: Basics of Linear Regression"/>
+<meta property="og:title" content="Statistical Data Science: Intro à Regressão Linear"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
-<meta property="og:url" content="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"/>
-<meta property="og:image" content="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png"/>
+<meta property="og:description" content="Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python)."/>
+<meta property="og:url" content="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"/>
+<meta property="og:image" content="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png"/>
 <meta property="og:image:width" content="1536"/>
 <meta property="og:image:height" content="768"/>
 <meta property="og:locale" content="en_US"/>
@@ -110,16 +110,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Statistical Data Science: Basics of Linear Regression"/>
-<meta property="twitter:description" content="A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."/>
-<meta property="twitter:url" content="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"/>
-<meta property="twitter:image" content="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png"/>
+<meta property="twitter:title" content="Statistical Data Science: Intro à Regressão Linear"/>
+<meta property="twitter:description" content="Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python)."/>
+<meta property="twitter:url" content="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"/>
+<meta property="twitter:image" content="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png"/>
 <meta property="twitter:image:width" content="1536"/>
 <meta property="twitter:image:height" content="768"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Statistical Data Science: Basics of Linear Regression"/>
-<meta name="citation_fulltext_html_url" content="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"/>
+<meta name="citation_title" content="Statistical Data Science: Intro à Regressão Linear"/>
+<meta name="citation_fulltext_html_url" content="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"/>
 <meta name="citation_online_date" content="2021/02/25"/>
 <meta name="citation_publication_date" content="2021/02/25"/>
 <meta name="citation_author" content="Carlos Trucíos"/>
@@ -127,12 +127,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Basics of Linear Regression"]},{"type":"character","attributes":{},"value":["A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it."]},{"type":"character","attributes":{},"value":["Linear Regression","R","Python","OLS"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]}]}]},{"type":"character","attributes":{},"value":["02-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Intro à Regressão Linear"]},{"type":"character","attributes":{},"value":["Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python)."]},{"type":"character","attributes":{},"value":["Regressão Linear","R","Python","MQO","Português"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]}]}]},{"type":"character","attributes":{},"value":["02-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["basics-of-linear-regression_files/anchor-4.2.2/anchor.min.js","basics-of-linear-regression_files/bowser-1.9.3/bowser.min.js","basics-of-linear-regression_files/distill-2.2.21/template.v2.js","basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png","basics-of-linear-regression_files/jquery-1.11.3/jquery.min.js","basics-of-linear-regression_files/popper-2.6.0/popper.min.js","basics-of-linear-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","basics-of-linear-regression_files/tippy-6.2.7/tippy-light-border.css","basics-of-linear-regression_files/tippy-6.2.7/tippy.css","basics-of-linear-regression_files/tippy-6.2.7/tippy.umd.min.js","basics-of-linear-regression_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["uma-introduo-regresso-linear_files/anchor-4.2.2/anchor.min.js","uma-introduo-regresso-linear_files/bowser-1.9.3/bowser.min.js","uma-introduo-regresso-linear_files/distill-2.2.21/template.v2.js","uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png","uma-introduo-regresso-linear_files/jquery-1.11.3/jquery.min.js","uma-introduo-regresso-linear_files/popper-2.6.0/popper.min.js","uma-introduo-regresso-linear_files/tippy-6.2.7/tippy-bundle.umd.min.js","uma-introduo-regresso-linear_files/tippy-6.2.7/tippy-light-border.css","uma-introduo-regresso-linear_files/tippy-6.2.7/tippy.css","uma-introduo-regresso-linear_files/tippy-6.2.7/tippy.umd.min.js","uma-introduo-regresso-linear_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2076,7 +2076,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Basics of Linear Regression","description":"A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-25T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
+{"title":"Intro à Regressão Linear","description":"Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-25T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2102,16 +2102,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Basics of Linear Regression</h1>
+<h1>Intro à Regressão Linear</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-  <a href="../../index.html#category:Linear_Regression" class="dt-tag">Linear Regression</a>
+  <a href="../../index.html#category:Regressão_Linear" class="dt-tag">Regressão Linear</a>
   <a href="../../index.html#category:R" class="dt-tag">R</a>
   <a href="../../index.html#category:Python" class="dt-tag">Python</a>
-  <a href="../../index.html#category:OLS" class="dt-tag">OLS</a>
+  <a href="../../index.html#category:MQO" class="dt-tag">MQO</a>
+  <a href="../../index.html#category:Português" class="dt-tag">Português</a>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.</p></p>
+<p><p>Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).</p></p>
 </div>
 
 <div class="d-byline">
@@ -2121,31 +2122,31 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
-<h3 id="introduction">Introduction</h3>
-<p>Linear Regression Analysis (LRA) is one of the most popular and useful statistical learning techniques and is helpful when we are interesting in explainig/predicting the variable <span class="math inline">\(y\)</span> using a set of <span class="math inline">\(k\)</span> explainable variables <span class="math inline">\(x_1, \ldots, x_k\)</span>.</p>
-<p>Basically, we are saying that the <span class="math inline">\(k\)</span> explainable variables can help us to understand the behaviour of <span class="math inline">\(y\)</span> and, in a linear regression framework, the relation between <span class="math inline">\(y\)</span> and the <span class="math inline">\(x\)</span>’s is given by a linear funcion of the form,</p>
-<p><span class="math display">\[y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u\]</span> where <span class="math inline">\(u\)</span> is an error term.</p>
-<h3 id="ols-estimation">OLS estimation</h3>
-<p>In practice we never know <span class="math inline">\(\beta = [\beta_0, \beta_1, \ldots, \beta_k]&#39;\)</span> and we have to estimate them using data, for which purpose there are several methods, being <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">OLS</a> (Ordinary Least Squares) the most commonly used<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>The OLS estimator is given by <span class="math display">\[\hat{\beta}_{OLS} = (X&#39;X)^{-1}X&#39;Y\]</span> with its respective covariance matrix (conditionally on <span class="math inline">\(X\)</span>) given by <span class="math display">\[V(\hat{\beta}_{OLS}|X) = \sigma^2(X&#39;X)^{-1}\]</span> where <span class="math inline">\(Y = [y_1, \ldots, y_n]&#39;\)</span> and <span class="math inline">\(X = \begin{bmatrix} 1 &amp; x_{1,1} &amp; \cdots &amp; x_{1,k} \\ \vdots &amp; \vdots &amp; \cdots &amp; \vdots \\ 1 &amp; x_{n,1} &amp; \cdots &amp; x_{n,k} \end{bmatrix}\)</span></p>
+<h3 id="introdução">Introdução</h3>
+<p>Uma das técnicas mais conhecidas e difundidas no mundo de <em>statistical/machine learning</em> é a Análise de Regressão Linear (ARL). Ela é útil quando estamos interessados em explicar/predizer a variável dependente <span class="math inline">\(y\)</span> utilizando um conjunto de <span class="math inline">\(k\)</span> variaveis explicativas <span class="math inline">\(x_1, \ldots, x_k\)</span>.</p>
+<p>Basicamente, utilizamos as <span class="math inline">\(k\)</span> variáveis explicativas para entender o comportamento de <span class="math inline">\(y\)</span> e, num contexto de regressão linear, assumimos que a relação entre <span class="math inline">\(y\)</span> e as <span class="math inline">\(x\)</span>’s é dada por uma função linear da forma:</p>
+<p><span class="math display">\[y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u\]</span> em que <span class="math inline">\(u\)</span> é o termo de erro.</p>
+<h3 id="estimação-por-mqo">Estimação por MQO</h3>
+<p>Na prática, nunca conhecemos <span class="math inline">\(\beta = [\beta_0, \beta_1, \ldots, \beta_k]&#39;\)</span> e temos que estima esses valores utilizando os dados. Existem diferentes métodos de estimação, sendo o método de <em>mínimos quadraros ordinários</em> (MQO) um dos mais comumente utilizados<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>O estimador de MQO é dado por <span class="math display">\[\hat{\beta} = (X&#39;X)^{-1}X&#39;Y\]</span> e sua respectiva matriz de covariância (condicional em <span class="math inline">\(X\)</span>) é dada por <span class="math display">\[V(\hat{\beta}|X) = \sigma^2(X&#39;X)^{-1}\]</span> em que <span class="math inline">\(Y = [y_1, \ldots, y_n]&#39;\)</span> e <span class="math inline">\(X = \begin{bmatrix} 1 &amp; x_{1,1} &amp; \cdots &amp; x_{1,k} \\ \vdots &amp; \vdots &amp; \cdots &amp; \vdots \\ 1 &amp; x_{n,1} &amp; \cdots &amp; x_{n,k} \end{bmatrix}\)</span></p>
 <ul>
-<li><span class="math inline">\(\sigma^2\)</span> is never known, so we use <span class="math inline">\(\hat{\sigma}^2 = \dfrac{ \sum_{i=1}^n \hat{u}_i^2}{n-k-1}\)</span> instead, which is an unbiased estimator of <span class="math inline">\(\sigma^2\)</span> (<span class="math inline">\(E(\hat{\sigma}^2) = \sigma^2\)</span>).</li>
-<li>So, in practice we always use <span class="math inline">\(\widehat{V}(\hat{\beta}_{OLS}|X) = \hat{\sigma}^2(X&#39;X)^{-1}\)</span> instead of <span class="math inline">\(V(\hat{\beta}_{OLS}|X)\)</span>.</li>
-<li>The Standard errors, usually reported by many econometrics/statistical softwares, are the square root of the diagonal elements of <span class="math inline">\(\widehat{V}(\hat{\beta}_{OLS}|X)\)</span></li>
+<li><span class="math inline">\(\sigma^2\)</span> nunca é conhecido, então utilizamos <span class="math inline">\(\hat{\sigma}^2 = \dfrac{ \sum_{i=1}^n \hat{u}_i^2}{n-k-1}\)</span>, que é um estimador não viesado de <span class="math inline">\(\sigma^2\)</span> (<span class="math inline">\(E(\hat{\sigma}^2) = \sigma^2\)</span>).</li>
+<li>Assim, na prática nós sempre utilizamos <span class="math inline">\(\widehat{V}(\hat{\beta}|X) = \hat{\sigma}^2(X&#39;X)^{-1}\)</span> no lugar de <span class="math inline">\(V(\hat{\beta}|X)\)</span>.</li>
+<li>O desvio padrão, geralmente reportados pelo softwares estatísticos/econométricos, é a raiz quadrada dos elementos na diagonal de <span class="math inline">\(\widehat{V}(\hat{\beta}|X)\)</span>.</li>
 </ul>
-<p>The <a href="https://en.wikipedia.org/wiki/Gauss–Markov_theorem">Gaus–Markov theorem</a> states that, under some assumptions (known as Gauss-Markov hipotheses), <span class="math inline">\(\hat{\beta}_{OLS}\)</span> is the <strong>Best Linear Unbiased Estimator</strong> (BLUE), <em>i.e.</em> for any other unbiased linear estimator<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="math inline">\(\tilde{\beta}\)</span>, <span class="math display">\[V(\tilde{\beta}|X) \geq V(\hat{\beta}_{OLS}|X).\]</span></p>
-<p>Figure 1 displays an example of the regression line <span class="math inline">\(\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x\)</span> obtained by OLS.</p>
+<p>O <a href="https://en.wikipedia.org/wiki/Gauss–Markov_theorem">Teorema de Gaus–Markov</a> estabelece que, sob algumas hipóteses (conhecidas como as hipóteses de Gauss-Markov), <span class="math inline">\(\hat{\beta}\)</span> é o melhor estimador linear não viesado (<strong>BLUE</strong> em inglês: <em>Best Linear Unbiased Estimator</em>), ou seja, para qualquer outro estimador linear<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="math inline">\(\tilde{\beta}\)</span>, <span class="math display">\[V(\tilde{\beta}|X) \geq V(\hat{\beta}|X).\]</span></p>
+<p>A Figura 1 mostra um exemplo de uma reta de regressão <span class="math inline">\(\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x\)</span> obtida pelo método de MQO.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png" alt="OLS regression line example" width="768" />
+<img src="uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png" alt="OLS regression line example" width="768" />
 <p class="caption">
 Figure 1: OLS regression line example
 </p>
 </div>
 </div>
-<h3 id="r-implementation">R implementation</h3>
-<p>Using linear regression in R is straightforward, to see how to implement a linear regression in R let’s use the <em>hprice1</em> dataset from the <em>wooldridge</em> R package.</p>
-<p>To perform the linear regression <span class="math display">\[price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u,\]</span> we use</p>
+<h3 id="implementação-no-r">Implementação no R</h3>
+<p>Realizar uma regressão linear no R não é difícil, para ver como faze-lo utilizaremos o conjunto de dados <em>hprice1</em> disponível no pacote <em>wooldridge</em> do R.</p>
+<p>Se assumimos que o modelo populacional é da forma <span class="math display">\[price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u,\]</span> utilizamos o seguintes comandos</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://justinmshea.github.io/wooldridge'>wooldridge</a></span><span class='op'>)</span>
@@ -2162,9 +2163,9 @@ Coefficients:
  -24.126528    11.004292     0.002076     0.124237    13.715542  </code></pre>
 </div>
 <aside>
-The lm( ) function don’t need to load any R package, but the <em>hprice1</em> dataset needs the wooldridge R package.
+A função lm( ) não precisa de nenhum pacote adicional do R, mas para utilizarmos os dados <em>hprice1</em>, precisamos carregar o pacote <em>wooldridge</em>.
 </aside>
-<p>A better output, which includes the standard deviation of <span class="math inline">\(\hat{\beta}\)</span>, t-test, F-test, <span class="math inline">\(R^2\)</span> and p-values can be easily obtained by</p>
+<p>O output anterior apenas mostra os <span class="math inline">\(\hat{\beta}\)</span>’s, um output mais completo, que inclui o desvio padrão dos <span class="math inline">\(\hat{\beta}\)</span>’s, o teste T, teste F, <span class="math inline">\(R^2\)</span> e p-valores pode ser facilmente obtido utilizando a função summary( ).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>
@@ -2192,8 +2193,9 @@ Residual standard error: 59.88 on 83 degrees of freedom
 Multiple R-squared:  0.6758,    Adjusted R-squared:  0.6602 
 F-statistic: 43.25 on 4 and 83 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<h3 id="interpretation">Interpretation</h3>
-<p>Before interpreting the results, it is very important to know our dataset and have totally understanding about the variables we are using. Thus, let’s have a glimpse in our dataset</p>
+<h3 id="interpretação">Interpretação</h3>
+<p>Antes de interpretar os resultados é importante e necessário conhecer conhecer os dados e saber quais as unidades de medida das nossas variáveis<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Para darmos uma olhada nos dados utilizaremos as funções select( ) e glimpse( ) do pacote <em>dplyr</em>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
@@ -2209,57 +2211,57 @@ $ sqrft    &lt;int&gt; 2438, 2076, 1374, 1448, 2514, 2754, 2067, 1731, 17…
 $ colonial &lt;int&gt; 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0,…</code></pre>
 </div>
 <aside>
-The package <em>dplyr</em> is for data manipulation. The function select( ) select a subset of variables in <em>hprice1</em> while the function glimpse( ) allow us to have a glimpse of the data.
+O pacote <em>dplyr</em> é utilizado para manipulação de dados. A função select( ) seleciona algumas das variaveis contidas em <em>hprice1</em> e a função glimpse ( ) nos permite ver rapidamente a estrutura dos dados.
 </aside>
-<p>The description of the variables is given below:</p>
+<p>A descrição das variáveis é apresentada a seguir e ela pode ser obtida utilizando diretamente os comandos <em>help(hprice1)</em> ou <em>?hprice1</em>.</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Variavel</th>
-<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variável</th>
+<th style="text-align: left;">Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">price</td>
-<td style="text-align: left;">house price, $1000s</td>
+<td style="text-align: left;">preço da casa (em milhares de dólares)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">bdrms</td>
-<td style="text-align: left;">number of bedrooms</td>
+<td style="text-align: left;">número de quartos</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">lotsize</td>
-<td style="text-align: left;">size of lot in square feet</td>
+<td style="text-align: left;">tamaho do lote da casa (em pes<span class="math inline">\(^2\)</span>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sqrft</td>
-<td style="text-align: left;">size of house in square feet</td>
+<td style="text-align: left;">tamaho da casa (em pes<span class="math inline">\(^2\)</span>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">colonial</td>
-<td style="text-align: left;">Dummy (=1 if home is colonial style)</td>
+<td style="text-align: left;">Dummy (=1 se a casa for de estilo colonial)</td>
 </tr>
 </tbody>
 </table>
-<p>There are several points to be addressed looking at the output of our regression model provided by the summary( ) function:</p>
+<p>Conhecendo melhor os dados, vamos então interpretar os resultados:</p>
 <ul>
-<li><span class="math inline">\(\approx 66\%\)</span> of price’s variability is explained by our model<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
-<li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
-<li>The increase of 481 square feet in size lot, implies the increase (on average) of a thousand<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> USD in house prices (when other factors remain constant).</li>
-<li>The increase of 8 square feet in size house, implies the increase (on average) of a thousand<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> USD in house prices (when other factors remain constant).</li>
+<li><span class="math inline">\(\approx 66\%\)</span> da variabilidade do preço (price) é explicador pelo modelo<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
+<li>Utilizando as estatísticas T (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>) apenas <em>lotsize</em> e <em>sqrft</em> são estatísticamente significativas (<em>i.e.</em> rejeitamos <span class="math inline">\(H_0\)</span>) ao nível de significância de 5%.</li>
+<li>O incremento em 481 pês<span class="math inline">\(^2\)</span> no lote da casa, implica, em média, um incremento de mil dólares<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
+<li>O incremente em 8 pês<span class="math inline">\(^2\)</span> no tamanho da casa, implica, em édia, um incremento de mil dólares<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
 </ul>
-<p>Finally, the summary( )’s output also provides useful information to test <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
+<p>Finalmente, summary( ) também fornece informação para testar <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> vs. <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Utilizando o teste F, rejeitamos <span class="math inline">\(H_0\)</span> (p-valor <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
 <blockquote>
-<p>Of course, the inpretetation was made assuming that the <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">classical linear model hypothesis</a> were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified.</p>
+<p>Obviamente, nossa interpretação foi realizada assumindo que as <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">hipóteses do modelo linear clássico</a> são satisfeitas. Se as hipóteses não são satisfeitas, precisamos melhoras/corrigir nosso modelo e apenas interpretar os resultados quando as hipóteses do modelo linear clássico forem verificadas.</p>
 </blockquote>
-<p>In Wooldridge’s book<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> we find an interesting discussion about model interpretation depending whether <span class="math inline">\(\log(\cdot)\)</span> transformation is used or not, which can be summarised as:</p>
+<p>No livro do Wooldridge<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> encontramos uma interessante discussão sobre como interpretar os <span class="math inline">\(\beta\)</span>’s quando utilizamos ou não transformações logaritmicas. A seguinte Tabela apresenta um resumo dessa discussão e fornece uma guia para melhor interpretarmos os resultados</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Dependent variable</th>
-<th style="text-align: center;">Independent variable</th>
-<th style="text-align: center;">Interpretation of <span class="math inline">\(\beta\)</span></th>
+<th style="text-align: center;">Variável dependente</th>
+<th style="text-align: center;">Variável independente</th>
+<th style="text-align: center;">Interpretação do <span class="math inline">\(\beta\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2285,13 +2287,13 @@ The package <em>dplyr</em> is for data manipulation. The function select( ) sele
 </tr>
 </tbody>
 </table>
-<h3 id="conclusions">Conclusions</h3>
+<h3 id="conclusões">Conclusões</h3>
 <ul>
-<li>LRA is a powerful and easy to implemente statistical learning technique which can provides interesting insights about our data.</li>
-<li>R provides an easy way to perform linear regression as well as information useful to interpret the results. However, it is important to take care about the hypothesis assumed in LRA (which is the topic of other post), the non-verification of those hypothesis can have an strong influence in the results obtained by our model.</li>
+<li>ARL é um métodos estatístico (econométrico, de machine/statiscal learning) poderoso e facil de implementar, ele pode fornecer <em>insights</em> importantes sobre nossos dados (e consequentemente sobre nosso negócio).</li>
+<li>R fornece uma forma facil de utilizar regressão linear e fornece também informação útil para sua interpretação. Contudo, é importante tomar cuidado sobre as hipóteses assumidas no modelo (que é o tópico do nosso próximo post), a não verificação das hipóteses pode ter um forte impacto nos resultados obtidos.</li>
 </ul>
 <h3 id="bonus">Bonus</h3>
-<h4 id="python-implementation">Python implementation</h4>
+<h4 id="implementação-em-python">Implementação em Python</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -2302,11 +2304,11 @@ The package <em>dplyr</em> is for data manipulation. The function select( ) sele
 <span id="cb4-7"><a href="#cb4-7"></a></span>
 <span id="cb4-8"><a href="#cb4-8"></a>y, X <span class="op">=</span> dmatrices(<span class="st">&#39;price ~ bdrms + lotsize + sqrft + colonial&#39;</span>, </span>
 <span id="cb4-9"><a href="#cb4-9"></a>                  data <span class="op">=</span> hprice1, return_type <span class="op">=</span> <span class="st">&#39;dataframe&#39;</span>)</span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Describe model</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Definir o modelo</span></span>
 <span id="cb4-11"><a href="#cb4-11"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Fit model</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Ajustar o modelo</span></span>
 <span id="cb4-13"><a href="#cb4-13"></a>model_fit <span class="op">=</span> model.fit()</span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># Summarize model</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co"># Resultados completos do modelo</span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="bu">print</span>(model_fit.summary())</span></code></pre></div>
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -2314,7 +2316,7 @@ Dep. Variable:                  price   R-squared:                       0.676
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     43.25
 Date:                Qui, 25 Fev 2021   Prob (F-statistic):           1.45e-19
-Time:                        08:41:30   Log-Likelihood:                -482.41
+Time:                        08:59:02   Log-Likelihood:                -482.41
 No. Observations:                  88   AIC:                             974.8
 Df Residuals:                      83   BIC:                             987.2
 Df Model:                           4                                         
@@ -2343,12 +2345,13 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>The basic idea of OLS is to find the values <span class="math inline">\(\hat{\beta}\)</span>’s that minimize the sum of squared errors.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>A linear estimator is an estimator of the form <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> where the matrix <span class="math inline">\(A\)</span> is a <span class="math inline">\(n \times k+1\)</span> function of <span class="math inline">\(X\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Usually, we prefer <span class="math inline">\(R^2_{Adjusted}\)</span> rather than <span class="math inline">\(R^2\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p><span class="math inline">\(2.076e-03*481 = 0.998556 \approx 1\)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p><span class="math inline">\(0.1242*8 = 0.9936 \approx 1\)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Wooldridge, J. M. (2016). Introductory econometrics: A modern approach. Nelson Education.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>A ideia básica deste método é encontrar os valores <span class="math inline">\(\hat{\beta}\)</span>’s que minimizam a soma de quadrados dos erros.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Um estimador linear é um estimador da forma <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> em que a matrix <span class="math inline">\(A\)</span> é uma matriz de dimensão <span class="math inline">\(n \times k+1\)</span> função de <span class="math inline">\(X\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Na prática, antes de ajustar a reta de regressão é feita uma análise exploratória de dados (EDA em inglês). Nessa EDA já conheceremos melhor as variáveis com as que estamos trabalhando<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Geralmente, preferimos o <span class="math inline">\(R^2_{Adjusted}\)</span> ao <span class="math inline">\(R^2\)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p><span class="math inline">\(2.076e-03*481 = 0.998556 \approx 1\)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p><span class="math inline">\(0.1242*8 = 0.9936 \approx 1\)</span><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Wooldridge, J. M. (2016). Introdução à Econometria: Uma abordagem moderna. Cengage.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
@@ -2357,17 +2360,17 @@ strong multicollinearity or other numerical problems.</code></pre>
     <span class="disqus-comments">
       <i class="fas fa-comments"></i>
       &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2021-02-10-basics-of-linear-regression/">Comment on this article</span>
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2021-02-24-uma-introduo-regresso-linear/">Comment on this article</span>
     </span>
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-10-basics-of-linear-regression%2F">
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-24-uma-introduo-regresso-linear%2F">
         <i class="fab fa-facebook"></i>
       </a>
-      <a href="https://twitter.com/share?text=Basics%20of%20Linear%20Regression&amp;url=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-10-basics-of-linear-regression%2F">
+      <a href="https://twitter.com/share?text=Intro%20%C3%A0%20Regress%C3%A3o%20Linear&amp;url=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-24-uma-introduo-regresso-linear%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-10-basics-of-linear-regression%2F&amp;title=Basics%20of%20Linear%20Regression">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fctruciosm.github.io%2Fstatblog%2Fposts%2F2021-02-24-uma-introduo-regresso-linear%2F&amp;title=Intro%20%C3%A0%20Regress%C3%A3o%20Linear">
         <i class="fab fa-linkedin"></i>
       </a>
     </span>
@@ -2376,8 +2379,8 @@ strong multicollinearity or other numerical problems.</code></pre>
   <div id="disqus_thread" class="hidden"></div>
   <script type="text/javascript" cookie-consent="functionality">
 var disqus_config = function () {
-  this.page.url = 'https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/';
-  this.page.identifier = 'posts/2021-02-10-basics-of-linear-regression/';
+  this.page.url = 'https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/';
+  this.page.identifier = 'posts/2021-02-24-uma-introduo-regresso-linear/';
 };
 (function() {
   var d = document, s = d.createElement('script');
@@ -2409,12 +2412,12 @@ var disqus_config = function () {
 <div class="appendix-bottom">
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Trucíos (2021, Feb. 25). Statistical Data Science: Basics of Linear Regression. Retrieved from https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/</pre>
+  <pre class="citation-appendix short">Trucíos (2021, Feb. 25). Statistical Data Science: Intro à Regressão Linear. Retrieved from https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{trucíos2021basics,
+  <pre class="citation-appendix long">@misc{trucíos2021intro,
   author = {Trucíos, Carlos},
-  title = {Statistical Data Science: Basics of Linear Regression},
-  url = {https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/},
+  title = {Statistical Data Science: Intro à Regressão Linear},
+  url = {https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/},
   year = {2021}
 }</pre>
 </div>
