@@ -110,12 +110,12 @@ The description of the variables is given below:
 There are several points to be addressed looking at the output of our regression model provided by the summary( ) function:
 
 - $\approx 66\%$ of price's variability is explained by our model^[Usually, we prefer  $R^2_{Adjusted}$ rather than $R^2$].
-- Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\%. 
+- Using the T-test ($H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0$), only *lotsize* and *sqrft* are statistical signficant (rejection of $H_0$) at significance level 5\%. 
 - The increase of 481 square feet in size lot, implies the increase (on average) of a thousand^[$2.076e-03*481 = 0.998556 \approx 1$] USD in house prices (when other factors remain constant).
 - The increase of 8 square feet in size house, implies the increase (on average) of a thousand^[$0.1242*8 = 0.9936 \approx 1$] USD in house prices (when other factors remain constant).
 
 
-Finally, the summary( )'s output also provides useful information to test $$H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0$$ versus $$H_1: H_0 \text{ is not true. }$$
+Finally, the summary( )'s output also provides useful information to test jointly $$H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0$$ versus $$H_1: H_0 \text{ is not true. }$$
 Using the F-test, we reject $H_0$ (p-value $\approx$ 0, F-statistics = 43.25)
 
 

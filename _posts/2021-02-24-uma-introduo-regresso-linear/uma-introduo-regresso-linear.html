@@ -1508,7 +1508,7 @@ Figure 1: OLS regression line example
 </div>
 <h3 id="implementação-no-r">Implementação no R</h3>
 <p>Realizar uma regressão linear no R não é difícil, para ver como faze-lo utilizaremos o conjunto de dados <em>hprice1</em> disponível no pacote <em>wooldridge</em> do R.</p>
-<p>Se assumimos que o modelo populacional é da forma <span class="math display">\[price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u,\]</span> utilizamos o seguintes comandos</p>
+<p>Se assumirmos que o modelo populacional é da forma <span class="math display">\[price = \beta_0 + \beta_1 bdrms + \beta_2 lotsize +  \beta_3 sqrft + \beta_4 colonial + u,\]</span> utilizamos o seguintes comandos</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://justinmshea.github.io/wooldridge'>wooldridge</a></span><span class='op'>)</span>
@@ -1594,11 +1594,11 @@ O pacote <em>dplyr</em> é utilizado para manipulação de dados. A função sel
 </tr>
 <tr class="odd">
 <td style="text-align: left;">lotsize</td>
-<td style="text-align: left;">tamaho do lote da casa (em pes<span class="math inline">\(^2\)</span>)</td>
+<td style="text-align: left;">tamanho do lote da casa (em pés<span class="math inline">\(^2\)</span>)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sqrft</td>
-<td style="text-align: left;">tamaho da casa (em pes<span class="math inline">\(^2\)</span>)</td>
+<td style="text-align: left;">tamanho da casa (em pés<span class="math inline">\(^2\)</span>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">colonial</td>
@@ -1608,12 +1608,12 @@ O pacote <em>dplyr</em> é utilizado para manipulação de dados. A função sel
 </table>
 <p>Conhecendo melhor os dados, vamos então interpretar os resultados:</p>
 <ul>
-<li><span class="math inline">\(\approx 66\%\)</span> da variabilidade do preço (price) é explicador pelo modelo<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
-<li>Utilizando as estatísticas T (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>) apenas <em>lotsize</em> e <em>sqrft</em> são estatísticamente significativas (<em>i.e.</em> rejeitamos <span class="math inline">\(H_0\)</span>) ao nível de significância de 5%.</li>
-<li>O incremento em 481 pês<span class="math inline">\(^2\)</span> no lote da casa, implica, em média, um incremento de mil dólares<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
-<li>O incremente em 8 pês<span class="math inline">\(^2\)</span> no tamanho da casa, implica, em édia, um incremento de mil dólares<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
+<li><span class="math inline">\(\approx 66\%\)</span> da variabilidade do preço (price) é explicada pelo nosso modelo<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</li>
+<li>Utilizando as estatísticas T (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0\)</span>) apenas <em>lotsize</em> e <em>sqrft</em> são estatísticamente significativas (<em>i.e.</em> rejeitamos <span class="math inline">\(H_0\)</span>) ao nível de significância de 5%.</li>
+<li>O incremento em 481 pés<span class="math inline">\(^2\)</span> (pés quadrados) no lote da casa, implica, em média, um incremento de mil dólares<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
+<li>O incremente em 8 pés<span class="math inline">\(^2\)</span> no tamanho da casa, implica, em édia, um incremento de mil dólares<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> no preço da casa (permanecendo fixos os outros fatores).</li>
 </ul>
-<p>Finalmente, summary( ) também fornece informação para testar <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> vs. <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Utilizando o teste F, rejeitamos <span class="math inline">\(H_0\)</span> (p-valor <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
+<p>Finalmente, summary( ) também fornece informação para testar conjuntamente <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> vs. <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Utilizando o teste F, rejeitamos <span class="math inline">\(H_0\)</span> (p-valor <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
 <blockquote>
 <p>Obviamente, nossa interpretação foi realizada assumindo que as <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">hipóteses do modelo linear clássico</a> são satisfeitas. Se as hipóteses não são satisfeitas, precisamos melhoras/corrigir nosso modelo e apenas interpretar os resultados quando as hipóteses do modelo linear clássico forem verificadas.</p>
 </blockquote>
@@ -1678,7 +1678,7 @@ Dep. Variable:                  price   R-squared:                       0.676
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     43.25
 Date:                Qui, 25 Fev 2021   Prob (F-statistic):           1.45e-19
-Time:                        08:59:02   Log-Likelihood:                -482.41
+Time:                        09:15:23   Log-Likelihood:                -482.41
 No. Observations:                  88   AIC:                             974.8
 Df Residuals:                      83   BIC:                             987.2
 Df Model:                           4                                         

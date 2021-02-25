@@ -1607,11 +1607,11 @@ The package <em>dplyr</em> is for data manipulation. The function select( ) sele
 <p>There are several points to be addressed looking at the output of our regression model provided by the summary( ) function:</p>
 <ul>
 <li><span class="math inline">\(\approx 66\%\)</span> of price’s variability is explained by our model<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
-<li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0)\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
+<li>Using the T-test (<span class="math inline">\(H_0: \beta_i = 0 \quad \text{vs.} \quad H_1: \beta_i \neq 0\)</span>), only <em>lotsize</em> and <em>sqrft</em> are statistical signficant (rejection of <span class="math inline">\(H_0\)</span>) at significance level 5%.</li>
 <li>The increase of 481 square feet in size lot, implies the increase (on average) of a thousand<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> USD in house prices (when other factors remain constant).</li>
 <li>The increase of 8 square feet in size house, implies the increase (on average) of a thousand<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> USD in house prices (when other factors remain constant).</li>
 </ul>
-<p>Finally, the summary( )’s output also provides useful information to test <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
+<p>Finally, the summary( )’s output also provides useful information to test jointly <span class="math display">\[H_0: \beta_{bdrms}=0,\beta_{lotsize}=0,\beta_{sqrft}=0,\beta_{colonial}=0\]</span> versus <span class="math display">\[H_1: H_0 \text{ is not true. }\]</span> Using the F-test, we reject <span class="math inline">\(H_0\)</span> (p-value <span class="math inline">\(\approx\)</span> 0, F-statistics = 43.25)</p>
 <blockquote>
 <p>Of course, the inpretetation was made assuming that the <a href="https://economictheoryblog.com/2015/04/01/ols_assumptions/">classical linear model hypothesis</a> were verified. If we have evidence of non-verication of some hypothesis we need to improve/correct our model and only interpret it when the classical linear model hypothesis have been verified.</p>
 </blockquote>
@@ -1676,7 +1676,7 @@ Dep. Variable:                  price   R-squared:                       0.676
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     43.25
 Date:                Qui, 25 Fev 2021   Prob (F-statistic):           1.45e-19
-Time:                        08:41:30   Log-Likelihood:                -482.41
+Time:                        09:17:07   Log-Likelihood:                -482.41
 No. Observations:                  88   AIC:                             974.8
 Df Residuals:                      83   BIC:                             987.2
 Df Model:                           4                                         
