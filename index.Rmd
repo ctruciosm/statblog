@@ -1,9 +1,9 @@
 ---
-title: "Statistical Data Science"
+title: "Data Science with Science"
 subtitle: |
   | 'Understanding the science behind Data Science'
 description: |
-  | 'Statistical Data Science: Understanding the science behind Data Science' 
+  | 'Data Science with Science: Understanding the science behind Data Science' 
 site: distill::distill_website
 listing: posts
 ---
