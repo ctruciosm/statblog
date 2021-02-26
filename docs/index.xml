@@ -12,29 +12,29 @@ Understanding the science behind Data Science
     <item>
       <title>Basics of Linear Regression</title>
       <dc:creator>Carlos Trucíos</dc:creator>
-      <link>https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression</link>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-02-25-basics-of-linear-regression</link>
       <description>A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.</description>
       <category>Linear Regression</category>
       <category>R</category>
       <category>Python</category>
       <category>OLS</category>
-      <guid>https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression</guid>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-02-25-basics-of-linear-regression</guid>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-02-10-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1536" height="768"/>
+      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-02-25-basics-of-linear-regression/basics-of-linear-regression_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1536" height="768"/>
     </item>
     <item>
       <title>Intro à Regressão Linear</title>
       <dc:creator>Carlos Trucíos</dc:creator>
-      <link>https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear</link>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-02-25-intro-regressao-linear</link>
       <description>Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).</description>
       <category>Regressão Linear</category>
       <category>R</category>
       <category>Python</category>
       <category>MQO</category>
       <category>Português</category>
-      <guid>https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear</guid>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-02-25-intro-regressao-linear</guid>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-02-24-uma-introduo-regresso-linear/uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1536" height="768"/>
+      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-02-25-intro-regressao-linear/uma-introduo-regresso-linear_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1536" height="768"/>
     </item>
   </channel>
 </rss>

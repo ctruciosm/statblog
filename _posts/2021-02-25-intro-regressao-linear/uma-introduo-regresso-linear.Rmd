@@ -28,21 +28,21 @@ Uma das técnicas mais conhecidas e difundidas no mundo de *statistical/machine 
 Basicamente, utilizamos as $k$ variáveis explicativas para entender o comportamento de $y$ e, num contexto de regressão linear, assumimos que a relação entre $y$ e as $x$'s é dada por uma função linear da forma:
 
 
-$$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u$$ em que $u$ é o termo de erro.
+$$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u,$$ em que $u$ é o termo de erro.
 
 
 ### Estimação por MQO
 
 Na prática, nunca conhecemos $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ e temos que estima esses valores utilizando os dados. Existem diferentes métodos de estimação, sendo o método de *mínimos quadraros ordinários* (MQO) um dos mais comumente utilizados^[A ideia básica deste método é encontrar os valores $\hat{\beta}$'s que minimizam a soma de quadrados dos erros.].
 
-O estimador de MQO é dado por $$\hat{\beta} = (X'X)^{-1}X'Y$$ e sua respectiva matriz de covariância (condicional em $X$) é dada por $$V(\hat{\beta}|X) = \sigma^2(X'X)^{-1}$$ em que $Y = [y_1, \ldots, y_n]'$ e $X = \begin{bmatrix} 
+O estimador de MQO é dado por $$\hat{\beta} = (X'X)^{-1}X'Y,$$ e sua respectiva matriz de covariância (condicional em $X$) é dada por $$V(\hat{\beta}|X) = \sigma^2(X'X)^{-1}$$ em que $Y = [y_1, \ldots, y_n]'$ e $X = \begin{bmatrix} 
 1 & x_{1,1} & \cdots & x_{1,k} \\ 
 \vdots & \vdots & \cdots & \vdots \\ 
 1 & x_{n,1} & \cdots & x_{n,k} \end{bmatrix}$
 
 - $\sigma^2$ nunca é conhecido, então utilizamos $\hat{\sigma}^2 = \dfrac{ \sum_{i=1}^n \hat{u}_i^2}{n-k-1}$, que é um estimador não viesado de $\sigma^2$ ($E(\hat{\sigma}^2) = \sigma^2$).
 - Assim, na prática nós sempre utilizamos $\widehat{V}(\hat{\beta}|X) = \hat{\sigma}^2(X'X)^{-1}$ no lugar de $V(\hat{\beta}|X)$.
-- O desvio padrão, geralmente reportados pelo softwares estatísticos/econométricos, é a raiz quadrada dos elementos na diagonal de $\widehat{V}(\hat{\beta}|X)$.
+- O desvio padrão, geralmente reportados pelos softwares estatísticos/econométricos, é a raiz quadrada dos elementos na diagonal de $\widehat{V}(\hat{\beta}|X)$.
 
 O [Teorema de Gaus--Markov](https://en.wikipedia.org/wiki/Gauss–Markov_theorem) estabelece que, sob algumas hipóteses (conhecidas como as hipóteses de Gauss-Markov), $\hat{\beta}$ é o melhor estimador linear não viesado (**BLUE** em inglês: *Best Linear Unbiased Estimator*), ou seja, para qualquer outro estimador linear^[Um estimador linear é um estimador da forma $\tilde{\beta} = A'Y$ em que a matrix $A$ é uma matriz de dimensão $n \times k+1$ função de $X$] $\tilde{\beta}$, $$V(\tilde{\beta}|X) \geq V(\hat{\beta}|X).$$
 
@@ -68,26 +68,24 @@ Se assumirmos que o modelo populacional é da forma $$price = \beta_0 + \beta_1 
 
 ```{r}
 library(wooldridge)
-model = lm(price~bdrms+lotsize+sqrft+colonial, data = hprice1)
-model
+modelo = lm(price~bdrms+lotsize+sqrft+colonial, data = hprice1)
+modelo
 ```
 
 
-<aside>
-A função lm( ) não precisa de nenhum pacote adicional do R, mas para utilizarmos os dados *hprice1*, precisamos carregar o pacote *wooldridge*.
-</aside>
+
 
 
 O output anterior apenas mostra os $\hat{\beta}$'s, um output mais completo, que inclui o desvio padrão dos $\hat{\beta}$'s, o teste T, teste F, $R^2$ e p-valores pode ser facilmente obtido utilizando a função summary( ).
 
 ```{r}
-summary(model)
+summary(modelo)
 ```
 
 ### Interpretação
 
 
-Antes de interpretar os resultados é importante e necessário conhecer conhecer os dados e saber quais as unidades de medida das nossas variáveis^[Na prática, antes de ajustar a reta de regressão é feita uma análise exploratória de dados (EDA em inglês). Nessa EDA já conheceremos melhor as variáveis com as que estamos trabalhando]. 
+Antes de interpretar os resultados é importante e necessário conhecer os dados e saber quais as unidades de medida das nossas variáveis^[Na prática, antes de ajustar a reta de regressão é feita uma análise exploratória de dados (EDA em inglês). Nessa EDA já conheceremos melhor as variáveis com as que estamos trabalhando, bem como as unidades de medida.]. 
 
 Para darmos uma olhada nos dados utilizaremos as funções select( ) e glimpse( ) do pacote *dplyr*.
 
@@ -160,11 +158,11 @@ hprice1 = pd.read_csv(url)
 y, X = dmatrices('price ~ bdrms + lotsize + sqrft + colonial', 
                   data = hprice1, return_type = 'dataframe')
 # Definir o modelo
-model = sm.OLS(y, X)
-# Ajustar o modelo
-model_fit = model.fit()
+modelo = sm.OLS(y, X)
+# Ajustar (fit) o modelo
+modelo_fit = modelo.fit()
 # Resultados completos do modelo
-print(model_fit.summary())
+print(modelo_fit.summary())
 ```
 
 

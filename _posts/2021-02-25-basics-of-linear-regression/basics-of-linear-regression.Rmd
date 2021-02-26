@@ -25,7 +25,7 @@ statistical learning techniques and is helpful when we are interesting in explai
 
 Basically, we are saying that the $k$ explainable variables can help us to understand the behaviour of $y$ and, in a linear regression framework, the relation between $y$ and the $x$'s is given by a linear funcion of the form,
 
-$$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u$$ where $u$ is an error term.
+$$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, x_k)} + u,$$ where $u$ is an error term.
 
 
 
@@ -34,10 +34,10 @@ $$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, 
 
 In practice we never know $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ and we have to estimate them using data, for which purpose there are several methods, being [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) (Ordinary Least Squares) the most commonly used^[The basic idea of OLS is to find the values $\hat{\beta}$'s that minimize the sum of squared errors.]. 
 
-The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y$$ with its respective covariance matrix (conditionally on $X$) given by $$V(\hat{\beta}_{OLS}|X) = \sigma^2(X'X)^{-1}$$ where $Y = [y_1, \ldots, y_n]'$ and $X = \begin{bmatrix} 
+The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y,$$ with its respective covariance matrix (conditionally on $X$) given by $$V(\hat{\beta}_{OLS}|X) = \sigma^2(X'X)^{-1},$$ where $Y = [y_1, \ldots, y_n]'$ and $X = \begin{bmatrix} 
 1 & x_{1,1} & \cdots & x_{1,k} \\ 
 \vdots & \vdots & \cdots & \vdots \\ 
-1 & x_{n,1} & \cdots & x_{n,k} \end{bmatrix}$
+1 & x_{n,1} & \cdots & x_{n,k} \end{bmatrix}.$
 
 - $\sigma^2$ is never known, so we use $\hat{\sigma}^2 = \dfrac{ \sum_{i=1}^n \hat{u}_i^2}{n-k-1}$ instead, which is an unbiased estimator of $\sigma^2$ ($E(\hat{\sigma}^2) = \sigma^2$).
 - So, in practice we always use $\widehat{V}(\hat{\beta}_{OLS}|X) = \hat{\sigma}^2(X'X)^{-1}$ instead of $V(\hat{\beta}_{OLS}|X)$.
