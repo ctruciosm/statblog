@@ -10,9 +10,12 @@ categories:
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
+    orcid_id: 0000-0001-8746-8877
 date: 02-25-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 3
     self_contained: false
 draft: false
 ---

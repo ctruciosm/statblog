@@ -3,17 +3,20 @@ title: "Intro à Regressão Linear"
 description: |
   Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).
 categories:
-  - Regressão Linear
+  - Regressao Linear
   - R
   - Python
   - MQO
-  - Português 
+  - Portugues 
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
+    orcid_id: 0000-0001-8746-8877
 date: 02-25-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 3
     self_contained: false
 draft: false
 ---
