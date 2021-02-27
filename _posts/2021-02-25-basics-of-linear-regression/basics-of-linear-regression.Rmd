@@ -6,7 +6,6 @@ categories:
   - Linear Regression
   - R
   - Python
-  - OLS
 author:
   - name: Carlos Trucíos
     url: https://ctruciosm.github.io
@@ -35,7 +34,7 @@ $$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, 
 
 ### OLS estimation
 
-In practice we never know $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ and we have to estimate them using data, for which purpose there are several methods, being [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) (Ordinary Least Squares) the most commonly used^[The basic idea of OLS is to find the values $\hat{\beta}$'s that minimize the sum of squared errors.]. 
+In practice we never know $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ and we have to estimate them using data, for which purpose there are several methods, being [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) (Ordinary Least Squares) the most commonly used^[The basic idea of OLS is to find the values $\hat{\beta}$'s that minimize the sum squared prediction errors.]. 
 
 The OLS estimator is given by  $$\hat{\beta}_{OLS} = (X'X)^{-1}X'Y,$$ with its respective covariance matrix (conditionally on $X$) given by $$V(\hat{\beta}_{OLS}|X) = \sigma^2(X'X)^{-1},$$ where $Y = [y_1, \ldots, y_n]'$ and $X = \begin{bmatrix} 
 1 & x_{1,1} & \cdots & x_{1,k} \\ 

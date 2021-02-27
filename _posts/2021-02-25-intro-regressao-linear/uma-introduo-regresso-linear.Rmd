@@ -6,7 +6,6 @@ categories:
   - Regressao Linear
   - R
   - Python
-  - MQO
   - Portugues 
 author:
   - name: Carlos Trucíos
@@ -36,7 +35,7 @@ $$y = \underbrace{\beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k}_{f(x_1, \ldots, 
 
 ### Estimação por MQO
 
-Na prática, nunca conhecemos $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ e temos que estima esses valores utilizando os dados. Existem diferentes métodos de estimação, sendo o método de *mínimos quadraros ordinários* (MQO) um dos mais comumente utilizados^[A ideia básica deste método é encontrar os valores $\hat{\beta}$'s que minimizam a soma de quadrados dos erros.].
+Na prática, nunca conhecemos $\beta = [\beta_0, \beta_1, \ldots, \beta_k]'$ e temos que estima esses valores utilizando os dados. Existem diferentes métodos de estimação, sendo o método de *mínimos quadraros ordinários* (MQO) um dos mais comumente utilizados^[A ideia básica deste método é encontrar os valores $\hat{\beta}$'s que minimizam a soma de quadrados dos residuos.].
 
 O estimador de MQO é dado por $$\hat{\beta} = (X'X)^{-1}X'Y,$$ e sua respectiva matriz de covariância (condicional em $X$) é dada por $$V(\hat{\beta}|X) = \sigma^2(X'X)^{-1}$$ em que $Y = [y_1, \ldots, y_n]'$ e $X = \begin{bmatrix} 
 1 & x_{1,1} & \cdots & x_{1,k} \\ 

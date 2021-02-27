@@ -1,0 +1,82 @@
+---
+title: "O Método de Mínimos Quadrados Ordináios (MQO)"
+description: |
+  Derivando passo a passo o estimador de mínimos quadrados ordinários
+categories:
+  - Regressao Linear
+  - R
+  - Python
+  - Portugues 
+author:
+  - name: Carlos Trucíos
+    url: https://ctruciosm.github.io
+    orcid_id: 0000-0001-8746-8877
+date: 02-27-2021
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+draft: true
+---
+
+
+### Introdução
+
+
+Seja o modelo populacional $$y = \beta_0 + \beta_1x_1 + \ldots x_k + u$$
+
+
+### 
+
+
+
+
+### Gauss-Markov
+
+O Teorema de Gauss-Markov estabelece que, sob certas condições, $\hat{\beta}$ é o melhor estimador linear não viessado, *i.e* para qualquer outro estimador linear $\tilde{\beta}$, $$V(\hat{\beta}|X) \leq V(\tilde{\beta}|X)$$
+
+#### Teorema de Gauss-Markov
+
+> Sob as hipóteses HRLM2 (homocedasticidade) e HRLM3 ($\{(y_i,X_i)\} i = 1, \ldots, n$ são *iid*). Se $\tilde{\beta}$ é um estimador linear não viessado para $\beta$, então $$V(\hat{\beta}|X) \leq V(\tilde{\beta}|X)$$ em que $\hat{\beta}$ é o estimador MQO. 
+
+
+#### Demostração
+
+Como $\tilde{\beta}$ é um estimador linear, ele é da forma $\tilde{\beta} = A'Y$ e então \begin{equation}
+\begin{aligned}
+V(\tilde{\beta}|X) & =  V(A'Y|X) \\
+                   & =  A'V(Y|X)A \\
+                   & =  A'V(X \beta + u|X)A \\
+                   & =  A'V(u|X)A \\
+                   & =  A'\sigma^2 I A \\
+                   & =  \sigma^2 A'A \\
+\end{aligned}
+\end{equation}
+
+Por outro lado, sabemos que $V(\hat{\beta}|X) = \sigma^2 (X'X)^{-1}$. Então basta provar que $V(\tilde{\beta}|X) - V(\hat{\beta}|X)$ é semi-definida positiva, ou seja $$\underbrace{A'A-(X'X)^{-1}}_{C} \geq 0$$
+
+Note que $C + (X'X)^{-1} = A'A$
+
+
+
+podemos escrever $$A'A-(X'X)^{-1} = C + (X'X)^{-1} - (X'X)^{-1}$$
+\begin{equation}
+\begin{aligned}
+A'A-(X'X)^{-1} & =  V(A'Y|X) \\
+                   & =  A'V(Y|X)A \\
+                   & =  A'V(X \beta + u|X)A \\
+                   & =  A'V(u|X)A \\
+                   & =  A'\sigma^2 I A \\
+                   & =  \sigma^2 A'A \\
+\end{aligned}
+\end{equation}
+
+
+
+
+
+
+### Implementação computacional
+
+

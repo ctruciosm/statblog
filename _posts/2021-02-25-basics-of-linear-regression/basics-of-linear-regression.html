@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Basics of Linear Regression"]},{"type":"character","attributes":{},"value":["A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.\n"]},{"type":"character","attributes":{},"value":["Linear Regression","R","Python","OLS"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]},{"type":"character","attributes":{},"value":["0000-0001-8746-8877"]}]}]},{"type":"character","attributes":{},"value":["02-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Basics of Linear Regression"]},{"type":"character","attributes":{},"value":["A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.\n"]},{"type":"character","attributes":{},"value":["Linear Regression","R","Python"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]},{"type":"character","attributes":{},"value":["0000-0001-8746-8877"]}]}]},{"type":"character","attributes":{},"value":["02-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1470,7 +1470,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="dt=tag">Linear Regression</div>
 <div class="dt=tag">R</div>
 <div class="dt=tag">Python</div>
-<div class="dt=tag">OLS</div>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>A quick introduction to Linear Regression Analysis and how to use R (and Python as well) to perform it.</p></p>
@@ -1689,7 +1688,7 @@ Dep. Variable:                  price   R-squared:                       0.676
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     43.25
 Date:                Sáb, 27 Fev 2021   Prob (F-statistic):           1.45e-19
-Time:                        07:33:53   Log-Likelihood:                -482.41
+Time:                        18:16:43   Log-Likelihood:                -482.41
 No. Observations:                  88   AIC:                             974.8
 Df Residuals:                      83   BIC:                             987.2
 Df Model:                           4                                         
@@ -1718,7 +1717,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>The basic idea of OLS is to find the values <span class="math inline">\(\hat{\beta}\)</span>’s that minimize the sum of squared errors.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>The basic idea of OLS is to find the values <span class="math inline">\(\hat{\beta}\)</span>’s that minimize the sum squared prediction errors.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2" role="doc-endnote"><p>A linear estimator is an estimator of the form <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> where the matrix <span class="math inline">\(A\)</span> is a <span class="math inline">\(n \times k+1\)</span> function of <span class="math inline">\(X\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3" role="doc-endnote"><p>Usually, we prefer <span class="math inline">\(R^2_{Adjusted}\)</span> rather than <span class="math inline">\(R^2\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4" role="doc-endnote"><p><span class="math inline">\(2.076e-03*481 = 0.998556 \approx 1\)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
