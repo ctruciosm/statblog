@@ -22,10 +22,12 @@ bibliography: statblog.bib
 ---
 
 
-![](teorema_proof.jpg)
-
-
 ### Introdução
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("teorema_proof.jpg")
+```
 
 
 O estimador de mínimos quadrados ordinários (MQO) é um dos métodos de estimação mais utilizados quanto à analise de regressão se refere. Ele é atrativo pela sua simplicidade e boas propriedades. 
