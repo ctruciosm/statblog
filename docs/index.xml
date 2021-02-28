@@ -8,7 +8,17 @@
 Understanding the science behind Data Science 
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Teorema de Gauss-Markov</title>
+      <dc:creator>Carlos Trucíos</dc:creator>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-02-28-teorema-de-gauss-markov</link>
+      <description>Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.</description>
+      <category>Regressao Linear</category>
+      <category>Portugues</category>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-02-28-teorema-de-gauss-markov</guid>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Basics of Linear Regression</title>
       <dc:creator>Carlos Trucíos</dc:creator>

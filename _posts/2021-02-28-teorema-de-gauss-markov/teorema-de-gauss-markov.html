@@ -86,37 +86,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>O Método de Mínimos Quadrados Ordináios (MQO)</title>
+  <title>Teorema de Gauss-Markov</title>
   
-  <meta property="description" itemprop="description" content="Derivando passo a passo o estimador de mínimos quadrados ordinários"/>
+  <meta property="description" itemprop="description" content="Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema."/>
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-02-27"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-02-27"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-02-28"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-02-28"/>
   <meta name="article:author" content="Carlos Trucíos"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="O Método de Mínimos Quadrados Ordináios (MQO)"/>
+  <meta property="og:title" content="Teorema de Gauss-Markov"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Derivando passo a passo o estimador de mínimos quadrados ordinários"/>
+  <meta property="og:description" content="Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema."/>
   <meta property="og:locale" content="en_US"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="O Método de Mínimos Quadrados Ordináios (MQO)"/>
-  <meta property="twitter:description" content="Derivando passo a passo o estimador de mínimos quadrados ordinários"/>
+  <meta property="twitter:title" content="Teorema de Gauss-Markov"/>
+  <meta property="twitter:description" content="Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema."/>
   
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Econometrics;citation_publication_date=2020;citation_author=Bruce E. Hansen"/>
+  <meta name="citation_reference" content="citation_title=A matrix Handbook for Statisticians;citation_publication_date=2008;citation_publisher=John Wiley &amp; Sons;citation_volume=15;citation_author=George AF Seber"/>
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["O Método de Mínimos Quadrados Ordináios (MQO)"]},{"type":"character","attributes":{},"value":["Derivando passo a passo o estimador de mínimos quadrados ordinários\n"]},{"type":"character","attributes":{},"value":["Regressao Linear","R","Python","Portugues"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]},{"type":"character","attributes":{},"value":["0000-0001-8746-8877"]}]}]},{"type":"character","attributes":{},"value":["02-27-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","categories","author","date","output","header-includes","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["Teorema de Gauss-Markov"]},{"type":"character","attributes":{},"value":["Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.\n"]},{"type":"character","attributes":{},"value":["Regressao Linear","Portugues"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","orcid_id"]}},"value":[{"type":"character","attributes":{},"value":["Carlos Trucíos"]},{"type":"character","attributes":{},"value":["https://ctruciosm.github.io"]},{"type":"character","attributes":{},"value":["0000-0001-8746-8877"]}]}]},{"type":"character","attributes":{},"value":["02-28-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["\\newcommand{\\argmin}{\\mathop{\\mathrm{argmin}}\\limits}","\\usepackage{amsmath}"]},{"type":"character","attributes":{},"value":["statblog.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["minimos-quadrados-ordinarios_files/anchor-4.2.2/anchor.min.js","minimos-quadrados-ordinarios_files/bowser-1.9.3/bowser.min.js","minimos-quadrados-ordinarios_files/distill-2.2.21/template.v2.js","minimos-quadrados-ordinarios_files/jquery-1.11.3/jquery.min.js","minimos-quadrados-ordinarios_files/popper-2.6.0/popper.min.js","minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy-bundle.umd.min.js","minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy-light-border.css","minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy.css","minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy.umd.min.js","minimos-quadrados-ordinarios_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["statblog.bib","teorema_proof.jpg","teorema-de-gauss-markov_files/anchor-4.2.2/anchor.min.js","teorema-de-gauss-markov_files/bowser-1.9.3/bowser.min.js","teorema-de-gauss-markov_files/distill-2.2.21/template.v2.js","teorema-de-gauss-markov_files/jquery-1.11.3/jquery.min.js","teorema-de-gauss-markov_files/popper-2.6.0/popper.min.js","teorema-de-gauss-markov_files/tippy-6.2.7/tippy-bundle.umd.min.js","teorema-de-gauss-markov_files/tippy-6.2.7/tippy-light-border.css","teorema-de-gauss-markov_files/tippy-6.2.7/tippy.css","teorema-de-gauss-markov_files/tippy-6.2.7/tippy.umd.min.js","teorema-de-gauss-markov_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1434,15 +1437,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="minimos-quadrados-ordinarios_files/jquery-1.11.3/jquery.min.js"></script>
-  <script src="minimos-quadrados-ordinarios_files/popper-2.6.0/popper.min.js"></script>
-  <link href="minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="minimos-quadrados-ordinarios_files/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="minimos-quadrados-ordinarios_files/anchor-4.2.2/anchor.min.js"></script>
-  <script src="minimos-quadrados-ordinarios_files/bowser-1.9.3/bowser.min.js"></script>
-  <script src="minimos-quadrados-ordinarios_files/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="minimos-quadrados-ordinarios_files/distill-2.2.21/template.v2.js"></script>
+  <script src="teorema-de-gauss-markov_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="teorema-de-gauss-markov_files/popper-2.6.0/popper.min.js"></script>
+  <link href="teorema-de-gauss-markov_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="teorema-de-gauss-markov_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="teorema-de-gauss-markov_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="teorema-de-gauss-markov_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="teorema-de-gauss-markov_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="teorema-de-gauss-markov_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="teorema-de-gauss-markov_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -1454,7 +1457,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"O Método de Mínimos Quadrados Ordináios (MQO)","description":"Derivando passo a passo o estimador de mínimos quadrados ordinários","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":"0000-0001-8746-8877"}],"publishedDate":"2021-02-27T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
+{"title":"Teorema de Gauss-Markov","description":"Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.","authors":[{"author":"Carlos Trucíos","authorURL":"https://ctruciosm.github.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":"0000-0001-8746-8877"}],"publishedDate":"2021-02-28T00:00:00.000+00:00","citationText":"Trucíos, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1464,22 +1467,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>O Método de Mínimos Quadrados Ordináios (MQO)</h1>
+<h1>Teorema de Gauss-Markov</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
 <div class="dt=tag">Regressao Linear</div>
-<div class="dt=tag">R</div>
-<div class="dt=tag">Python</div>
 <div class="dt=tag">Portugues</div>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>Derivando passo a passo o estimador de mínimos quadrados ordinários</p></p>
+<p><p>Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.</p></p>
 </div>
 
 <div class="d-byline">
   Carlos Trucíos <a href="https://ctruciosm.github.io" class="uri">https://ctruciosm.github.io</a> 
   
-<br/>02-27-2021
+<br/>02-28-2021
 </div>
 
 <div class="d-article">
@@ -1488,46 +1489,103 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#introdução">Introdução</a></li>
-<li><a href="#section"></a></li>
-<li><a href="#gauss-markov">Gauss-Markov</a></li>
-<li><a href="#implementação-computacional">Implementação computacional</a></li>
+<li><a href="#teorema">Teorema</a></li>
+<li><a href="#demostração">Demostração</a></li>
+<li><a href="#conclusão">Conclusão</a></li>
 </ul>
 </nav>
 </div>
+<p><img src="teorema_proof.jpg" /></p>
 <h3 id="introdução">Introdução</h3>
-<p>Seja o modelo populacional <span class="math display">\[y = \beta_0 + \beta_1x_1 + \ldots x_k + u\]</span></p>
-<h3 id="section"></h3>
-<h3 id="gauss-markov">Gauss-Markov</h3>
-<p>O Teorema de Gauss-Markov estabelece que, sob certas condições, <span class="math inline">\(\hat{\beta}\)</span> é o melhor estimador linear não viessado, <em>i.e</em> para qualquer outro estimador linear <span class="math inline">\(\tilde{\beta}\)</span>, <span class="math display">\[V(\hat{\beta}|X) \leq V(\tilde{\beta}|X)\]</span></p>
-<h4 id="teorema-de-gauss-markov">Teorema de Gauss-Markov</h4>
+<p>O estimador de mínimos quadrados ordinários (MQO) é um dos métodos de estimação mais utilizados quanto à analise de regressão se refere. Ele é atrativo pela sua simplicidade e boas propriedades.</p>
+<p>Sejam <span class="math inline">\(\{(y_i, x_{i,1}, \ldots, x_{i,k}) \}_{i=1, \ldots, n}\)</span> tais que:</p>
+<p><span class="math display">\[\begin{align}
+\begin{split}\label{eq:1}
+    y_1 &amp;= \beta_0 + \beta_1 x_{1,1}  + \cdots + \beta_k x_{1,k} + u_1 \\
+    \vdots \\
+    y_n &amp;= \beta_0 + \beta_1 x_{n,1}  + \cdots + \beta_k x_{n,k} + u_n \\
+\end{split}
+\end{align}\]</span></p>
+<p>ou equivalentemente</p>
+<p><span class="math display">\[ \underbrace{\left[ \begin{array}{c} y_1 \\ \vdots \\ y_n \end{array} \right]}_{Y} = \underbrace{\begin{bmatrix} 
+1 &amp; x_{1,1} &amp; \cdots &amp; x_{1,k} \\ 
+\vdots &amp; \vdots &amp; \cdots &amp; \vdots \\ 
+1 &amp; x_{n,1} &amp; \cdots &amp; x_{n,k} \end{bmatrix}}_{X} \times \underbrace{\left[ \begin{array}{c} \beta_0 \\ \vdots \\ \beta_k \end{array} \right]}_{\beta} + \underbrace{\left[ \begin{array}{c} u_1 \\ \vdots \\ u_n \end{array} \right]}_{u}\]</span></p>
+<p>então, o estimador MQO de <span class="math inline">\(\beta\)</span> é dado por <span class="math inline">\(\hat{\beta} = (X&#39;X)^{-1}X&#39;Y\)</span>.</p>
+<p>Sob certas <em>condições</em>, o Teorema de Gauss-Markov nos diz que <span class="math inline">\(\hat{\beta}\)</span> é o <strong>melhor estimador linear não viesado</strong> (<strong>BLUE</strong> em Inglês):</p>
+<ul>
+<li>Ele é linear<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> pois <span class="math inline">\(\hat{\beta} = (X&#39;X)^{-1}X&#39;Y\)</span> (basta fazer <span class="math inline">\(A&#39; = (X&#39;X)^{-1}X&#39;\)</span>).</li>
+<li>Ele é não viesado pois <span class="math inline">\(\mathbb{E}(\hat{\beta}) = \beta\)</span> e</li>
+<li>Ele é o melhor, pois possui a menor variância entre todos os outros estimadores lineares não viesados.</li>
+</ul>
+<h3 id="teorema">Teorema</h3>
+<p>Seja <span class="math inline">\(Y = X \beta + u\)</span> com <span class="math inline">\(X\)</span> de posto completo, <span class="math inline">\(\mathbb{E}(u|X) = 0\)</span> e <span class="math inline">\(\mathbb{V}(u|X) = \sigma^2 I\)</span>. Então <span class="math inline">\(\hat{\beta}\)</span>, o estimador MQO de <span class="math inline">\(\beta\)</span>, é o melhor estimador linear não viesado (<strong>BLUE</strong>) de <span class="math inline">\(\beta\)</span>.</p>
+<p>Note que o Teorema requer que:</p>
+<ul>
+<li>O modelo populacional seja da forma <span class="math inline">\(Y = X \beta + u\)</span></li>
+<li><span class="math inline">\(X\)</span> seja de posto completo (ou seja não existe colineariedade perfeita)</li>
+<li><span class="math inline">\(\mathbb{E}(u|X) = 0\)</span></li>
+<li><span class="math inline">\(\mathbb{V}(u|X) = \sigma^2 I\)</span></li>
+</ul>
+<p>Essas condições são às vezes conhecidas como as <strong>hipóteses de Gauss–Markov</strong>. Se alguma das <em>hipóteses de Gauss–Markov</em> não for valida, então <span class="math inline">\(\hat{\beta}\)</span> não será mais <strong>BLUE</strong>.</p>
 <blockquote>
-<p>Sob as hipóteses HRLM2 (homocedasticidade) e HRLM3 (<span class="math inline">\(\{(y_i,X_i)\} i = 1, \ldots, n\)</span> são <em>iid</em>). Se <span class="math inline">\(\tilde{\beta}\)</span> é um estimador linear não viessado para <span class="math inline">\(\beta\)</span>, então <span class="math display">\[V(\hat{\beta}|X) \leq V(\tilde{\beta}|X)\]</span> em que <span class="math inline">\(\hat{\beta}\)</span> é o estimador MQO.</p>
+<p>Ou seja Teorema de Gauss-Markov nos diz que se as condições do Teorema forem satisfeitas, não adianta buscar por algum outro estimador linear não viesado, pois <span class="math inline">\(\hat{\beta}\)</span> será o melhor (de menor variância).</p>
 </blockquote>
-<h4 id="demostração">Demostração</h4>
-<p>Como <span class="math inline">\(\tilde{\beta}\)</span> é um estimador linear, ele é da forma <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> e então <span class="math display">\[\begin{equation}
+<h3 id="demostração">Demostração</h3>
+<p>Seja <span class="math inline">\(\tilde{\beta}\)</span> qualquer outro estimador linear não viesado de <span class="math inline">\(\beta\)</span>.</p>
+<ol type="1">
+<li>Como <span class="math inline">\(\tilde{\beta}\)</span> é um estimador linear, ele é da forma <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> (para qualquer matriz <span class="math inline">\(A\)</span> de dimensão <span class="math inline">\(n \times k+1\)</span> função de <span class="math inline">\(X\)</span>.).</li>
+<li>Como <span class="math inline">\(\tilde{\beta}\)</span> é não viesado, temos que <span class="math inline">\(A&#39;X = I\)</span> pois <span class="math display">\[\begin{equation}
 \begin{aligned}
-V(\tilde{\beta}|X) &amp; =  V(A&#39;Y|X) \\
-                   &amp; =  A&#39;V(Y|X)A \\
-                   &amp; =  A&#39;V(X \beta + u|X)A \\
-                   &amp; =  A&#39;V(u|X)A \\
-                   &amp; =  A&#39;\sigma^2 I A \\
-                   &amp; =  \sigma^2 A&#39;A \\
+\mathbb{E}(\tilde{\beta} | X)  &amp; =  \mathbb{E}(A&#39;Y | X)\\
+                   &amp; =  \mathbb{E}(A&#39; (X\beta + u) | X) \\
+                   &amp; =  \mathbb{E}(A&#39;X\beta|X) + \mathbb{E}(u|X) \\
+                   &amp; =  \mathbb{E}(A&#39;X\beta|X) \quad \text{pois } \mathbb{E}(u|X) = 0 \\
+                   &amp; =  A&#39;X \beta, 
 \end{aligned}
-\end{equation}\]</span></p>
-<p>Por outro lado, sabemos que <span class="math inline">\(V(\hat{\beta}|X) = \sigma^2 (X&#39;X)^{-1}\)</span>. Então basta provar que <span class="math inline">\(V(\tilde{\beta}|X) - V(\hat{\beta}|X)\)</span> é semi-definida positiva, ou seja <span class="math display">\[\underbrace{A&#39;A-(X&#39;X)^{-1}}_{C} \geq 0\]</span></p>
-<p>Note que <span class="math inline">\(C + (X&#39;X)^{-1} = A&#39;A\)</span></p>
-<p>podemos escrever <span class="math display">\[A&#39;A-(X&#39;X)^{-1} = C + (X&#39;X)^{-1} - (X&#39;X)^{-1}\]</span> <span class="math display">\[\begin{equation}
+\end{equation}\]</span> que é não viesado se e somente se <span class="math inline">\(A&#39;X = I\)</span></li>
+<li>A variância de <span class="math inline">\(\tilde{\beta}\)</span> (condicional em <span class="math inline">\(X\)</span>) é <span class="math display">\[\begin{equation}
 \begin{aligned}
-A&#39;A-(X&#39;X)^{-1} &amp; =  V(A&#39;Y|X) \\
-                   &amp; =  A&#39;V(Y|X)A \\
-                   &amp; =  A&#39;V(X \beta + u|X)A \\
-                   &amp; =  A&#39;V(u|X)A \\
-                   &amp; =  A&#39;\sigma^2 I A \\
-                   &amp; =  \sigma^2 A&#39;A \\
+\mathbb{V}(\tilde{\beta}|X) &amp; =  \mathbb{V}(A&#39;Y|X) \\
+                &amp; =  A&#39;\mathbb{V}(Y|X)A \\
+                &amp; =  A&#39;\mathbb{V}(X \beta + u|X)A \\
+                &amp; =  A&#39;\mathbb{V}(u|X)A \\
+                &amp; =  A&#39;\sigma^2 I A \\
+                &amp; =  \sigma^2 A&#39;A \\
 \end{aligned}
-\end{equation}\]</span></p>
-<h3 id="implementação-computacional">Implementação computacional</h3>
+\end{equation}\]</span></li>
+<li>Definamos <span class="math inline">\(C = A - X(X&#39;X)^{-1}\)</span>, então <span class="math inline">\(X&#39;C = \underbrace{X&#39;A}_{I}-\underbrace{X&#39;X(X&#39;X)^{-1}}_{I} = 0\)</span></li>
+<li>Sabemos que <span class="math inline">\(\mathbb{V}(\hat{\beta}|X) = \sigma^2 (X&#39;X)^{-1}\)</span>. Então basta provar que <span class="math inline">\(\mathbb{V}(\tilde{\beta}|X) - \mathbb{V}(\hat{\beta}|X)\)</span> é semi-definida positiva, ou seja <span class="math display">\[A&#39;A-(X&#39;X)^{-1} \geq 0.\]</span> Para provar isto vejamos que <span class="math display">\[\begin{equation}
+\begin{aligned}
+A&#39;A-(X&#39;X)^{-1} &amp; =  [C+X(X&#39;X)^{-1}]&#39;[C+X(X&#39;X)^{-1}] -(X&#39;X)^{-1} \\
+            &amp; =  [C&#39;+ (X&#39;X)^{-1} X&#39;] [C+X(X&#39;X)^{-1}] -(X&#39;X)^{-1} \\
+            &amp; =  C&#39;C +  \underbrace{C&#39; X}_{0}(X&#39;X)^{-1} + (X&#39;X)^{-1} \underbrace{X&#39;C}_{0} \\ &amp;  + (X&#39;X)^{-1} \underbrace{X&#39; X(X&#39;X)^{-1}}_{I} -(X&#39;X)^{-1}\\
+            &amp; =  C&#39;C + (X&#39;X)^{-1} -(X&#39;X)^{-1} \\
+            &amp; =  C&#39;C \geq 0.\\
+\end{aligned}
+\end{equation}\]</span></li>
+</ol>
+<p>Com isso temos provado que <span class="math inline">\(A&#39;A \geq (X&#39;X)^{-1}\)</span> ou equivalentemente, <span class="math display">\[\underbrace{\sigma^2 A&#39;A}_{\mathbb{V}(\tilde{\beta}|X)} \geq \underbrace{\sigma^2 (X&#39;X)^{-1}}_{\mathbb{V}(\hat{\beta}|X)},\]</span> que é o que queremos demostrar.</p>
+<aside>
+<span class="math inline">\(C&#39;C\)</span> é de fato semi-definida positiva, veja Teorema A.4 em <span class="citation" data-cites="Hansen2020">(Hansen <a href="#ref-Hansen2020" role="doc-biblioref">2020</a>)</span> ou 10.10 em <span class="citation" data-cites="seber2008matrix">(Seber <a href="#ref-seber2008matrix" role="doc-biblioref">2008</a>)</span>.
+</aside>
+<h3 id="conclusão">Conclusão</h3>
+<p>Sob as hipóteses de Gauss-Markov, temos demostrado que o estimador de MQO, <span class="math inline">\(\hat{\beta}\)</span>, amplamente utilizado em análise de regressão é o melhor estimador linear não viesdado. Isto significa que se as hipóteses de Gauss-Markov são verificadas, não conseguiremos um estimador linear que seja melhor (menor variância) do que <span class="math inline">\(\hat{\beta}\)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-Hansen2020">
+<p>Hansen, Bruce E. 2020. <em>Econometrics</em>. Online version. Wisconsin.</p>
+</div>
+<div id="ref-seber2008matrix">
+<p>Seber, George AF. 2008. <em>A Matrix Handbook for Statisticians</em>. Vol. 15. John Wiley &amp; Sons.</p>
+</div>
+</div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Um estimador linear é um estimador da forma <span class="math inline">\(\tilde{\beta} = A&#39;Y\)</span> para uma matriz <span class="math inline">\(A\)</span> de dimensão <span class="math inline">\(n \times k+1\)</span> função de <span class="math inline">\(X\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1548,7 +1606,10 @@ A&#39;A-(X&#39;X)^{-1} &amp; =  V(A&#39;Y|X) \\
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
