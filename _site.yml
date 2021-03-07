@@ -8,8 +8,10 @@ base_url: https://ctruciosm.github.io/statblog/
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
+    - text: "Blog"
       href: index.html
+    - text: "Website"
+      href: https://ctruciosm.github.io
     - text: "About"
       href: about.html
     - icon: fa fa-rss
