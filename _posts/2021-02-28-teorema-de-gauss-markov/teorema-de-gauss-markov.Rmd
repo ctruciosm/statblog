@@ -3,7 +3,8 @@ title: "Teorema de Gauss-Markov"
 description: |
   Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.
 categories:
-  - Regressao Linear
+  - Linear Regression
+  - Proofs
   - Portugues 
 author:
   - name: Carlos Trucíos

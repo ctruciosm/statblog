@@ -3,7 +3,7 @@ title: "Intro à Regressão Linear"
 description: |
   Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).
 categories:
-  - Regressao Linear
+  - Linear Regression
   - R
   - Python
   - Portugues 

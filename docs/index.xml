@@ -8,13 +8,26 @@
 Understanding the science behind Data Science 
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Book Review: R for Data Science</title>
+      <dc:creator>Carlos Trucíos</dc:creator>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-03-14-book-review-r-for-data-science</link>
+      <description>Minhas impressões do livro R for data science: import, tidy, transform, visualize, and model data do Hadley Wickham e Garrett Grolemund.</description>
+      <category>Book Review</category>
+      <category>R</category>
+      <category>Portugues</category>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-03-14-book-review-r-for-data-science</guid>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-03-14-book-review-r-for-data-science/cover.png" medium="image" type="image/png" width="500" height="750"/>
+    </item>
     <item>
       <title>Teorema de Gauss-Markov</title>
       <dc:creator>Carlos Trucíos</dc:creator>
       <link>https://ctruciosm.github.io/statblog/posts/2021-02-28-teorema-de-gauss-markov</link>
       <description>Uma das propriedades mais interessentes dos estimadores MQO é fornecida pelo Teorema de Gauss-Markov. Neste post discutimos a importância, significado e fornecemos uma demostração passo a passo do Teorema.</description>
-      <category>Regressao Linear</category>
+      <category>Linear Regression</category>
+      <category>Proofs</category>
       <category>Portugues</category>
       <guid>https://ctruciosm.github.io/statblog/posts/2021-02-28-teorema-de-gauss-markov</guid>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
@@ -37,7 +50,7 @@ Understanding the science behind Data Science
       <dc:creator>Carlos Trucíos</dc:creator>
       <link>https://ctruciosm.github.io/statblog/posts/2021-02-25-intro-regressao-linear</link>
       <description>Uma breve introdução à Análise de Regressão Linear: interpretação e implementação no R (e no Python).</description>
-      <category>Regressao Linear</category>
+      <category>Linear Regression</category>
       <category>R</category>
       <category>Python</category>
       <category>Portugues</category>
