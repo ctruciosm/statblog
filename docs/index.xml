@@ -8,7 +8,19 @@
 Understanding the science behind Data Science 
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Mínimos Quadrados Ordinários</title>
+      <dc:creator>Carlos Trucíos</dc:creator>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-04-01-posts2021-04-01-minimos-quadrados-ordinarios</link>
+      <description>Quando trabalhamos com modelos de regressão é necessário estimar os parâmetros do modelo. Um dos métodos de estimação mais conhecidos é o estimador de mínimos quadrados ordinários (ou MQO para os amigos). Em este post discutiremos a necessidade de estimar os parâmetros, entendermos a intuição por trás do método e derivaremos, passo a passo, o estimador MQO no modelo de regressão linear simples.</description>
+      <category>Linear Regression</category>
+      <category>Proofs</category>
+      <category>Portugues</category>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-04-01-posts2021-04-01-minimos-quadrados-ordinarios</guid>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-04-01-posts2021-04-01-minimos-quadrados-ordinarios/derivando-o-estimador-de-mqo_files/figure-html5/MQO1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Book Review: R for Data Science</title>
       <dc:creator>Carlos Trucíos</dc:creator>
