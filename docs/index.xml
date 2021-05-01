@@ -8,7 +8,17 @@
 Understanding the science behind Data Science 
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Configurando Rstudio para usar o Rmarkdown</title>
+      <dc:creator>Carlos Trucíos</dc:creator>
+      <link>https://ctruciosm.github.io/statblog/posts/2021-05-01-configurando-rstudio-para-usar-o-rmarkdown</link>
+      <description>Passo a passo de como configurar o Rstudio para fazer relatórios e apresentações utlizando o Rmarkdown.</description>
+      <category>R</category>
+      <guid>https://ctruciosm.github.io/statblog/posts/2021-05-01-configurando-rstudio-para-usar-o-rmarkdown</guid>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://ctruciosm.github.io/statblog/posts/2021-05-01-configurando-rstudio-para-usar-o-rmarkdown/im/001.png" medium="image" type="image/png" width="1366" height="768"/>
+    </item>
     <item>
       <title>Mínimos Quadrados Ordinários</title>
       <dc:creator>Carlos Trucíos</dc:creator>
