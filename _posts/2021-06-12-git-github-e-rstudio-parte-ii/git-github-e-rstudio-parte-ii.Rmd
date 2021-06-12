@@ -1,0 +1,77 @@
+---
+title: "Git, GitHub e Rstudio Parte II"
+description: |
+  A short description of the post.
+author:
+  - name: Carlos Trucíos
+    url: https://ctruciosm.github.io
+date: 06-12-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+### Criando um novo projeto.
+
+Agora vamos a criar um novo projeto no Rstudio e vamos a vincular ele com o Git/GitHub.
+
+Para criar um novo projeto:
+
+```{r}
+usethis::create_project("/Volumes/CTRUCIOS_SD/Research/repo_teste")
+```
+
+Assim que rodar o código acima, aparecerá o seguinte:
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/006.png")
+```
+
+Logo após, o Rstudio abrirá outra sessão com o novo projeto (se não abriu, vá na pasta onde criou o projeto, no meu caso `/Volumes/CTRUCIOS_SD/Research/`, e encontrará uma pasta com o nome `repo_teste` onde encontrará o projeto do Rstudio.)
+
+
+Nessa nova sessão do Rstudio, repare que o nome do novo projeto aparece no conto superior direito. (Aqui já pode fechar todas as janelas do Rstudio menos a que acabou de ser criada).
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/007.png")
+```
+
+
+Agora precisamos vincular esse novo projeto ao Git/GitHub
+
+```{r}
+usethis::use_git() 
+```
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/008.png")
+```
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/009.png")
+```
+
+Por último
+
+```{r, eval=FALSE}
+usethis::use_github()
+```
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/010.png")
+```
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./im/011.png")
+```
+
+
+Pronto! Seu novo projeto foi criado, e vinculado com o Git/GitHub.
+
