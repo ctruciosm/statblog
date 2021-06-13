@@ -1,7 +1,7 @@
 ---
 title: "Git, GitHub e Rstudio"
 description: |
-  Tutorial de como configurar o Git no Rstudio.
+  Tutorial de como configurar o Git/GitHub no Rstudio.
 categories:
   - Rstudio
   - Git
@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Se você escreve código (seja na linguagem que for) sabe que utilizar o Git/GitHub é muito útil. Se você (assim como eu) gosta de usar o Rstudio, talvez esteja interessado(a) em configurar sua conta do Git no Rstudio. 
 
-Esta configuração é algo que é feito apenas uma única vez na vida (ok não na vida, mas uma única vez por computador) e este turorial vai te guiar no passo a passo.
+Esta configuração é algo que é feito apenas uma única vez na vida (ok não na vida, mas uma única vez por computador) e este tutorial vai te guiar no passo a passo.
 
 
 ### Pré-requisitos
@@ -144,7 +144,7 @@ knitr::include_graphics("./im/019.png")
 ```
 
 
-Enseguida escolha a opção `Git` e preencha a opção `Repository URL` com endereço que acabou de copiar do GitHub. Escolha também onde quer criar o projeto no seu computador (no meu caso `/Volumes/CTRUCIOS_SD/Research`). Não esqueça marcar a opção `Open in new session`.
+Enseguida escolha a opção `Git` e preencha a opção `Repository URL` com o endereço que acabou de copiar do GitHub. Escolha também onde quer criar o projeto no seu computador (no meu caso `/Volumes/CTRUCIOS_SD/Research`). Não esqueça marcar a opção `Open in new session`.
 
 
 ```{r echo=FALSE, out.width = '100%'}
@@ -156,7 +156,7 @@ knitr::include_graphics("./im/020.png")
 knitr::include_graphics("./im/021.png")
 ```
 
-**Pronto!** Agora seu repositório no GitHub e seu novo projeto do Rstudio estão vinculados, agora é só escrever seus códigos e fazer commits, Push and Pulls.
+Clicar em `Create project` e **Pronto!** Seu repositório no GitHub e seu novo projeto do Rstudio estão vinculados, agora é só escrever seus códigos e fazer commits, Push and Pulls.
 
 
 ### Bonus: commit and push
@@ -166,7 +166,7 @@ O código que você escreverá no seu computador, ficará unicamente no seu comp
 Para mostrar como se fazer commit and Push, criei um arquivo chamado `codigo01.R`
 
 ```{r echo=FALSE, out.width = '100%'}
-knitr::include_graphics("./im/012.png")
+knitr::include_graphics("./im/025.png")
 ```
 
 Para fazer _commit_, vá na aba `Git` e dê clic na opção `Commit`.
